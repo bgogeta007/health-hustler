@@ -692,12 +692,12 @@ const CommunityPhotos: React.FC = () => {
 
                                     {/* Mentions Dropdown */}
                                     {showMentions && activeInputId === comment.id && mentionResults.length > 0 && (
-                                      <div className="absolute bottom-full left-0 w-full bg-white dark:bg-gray-800 rounded-lg shadow-lg mb-1 max-h-20 overflow-y-auto">
+                                      <div className="absolute bottom-full left-0 w-full bg-white dark:bg-gray-800 rounded-lg shadow-lg mb-1 max-h-48 overflow-y-auto">
                                         {mentionResults.map((profile) => (
                                           <button
                                             key={profile.id}
                                             onClick={() => insertMention(profile.username, photo.id, comment.id)}
-                                            className="w-full px-4 py-2 text-left hover:bg-gray-100 dark:hover:bg-gray-700 flex items-center space-x-2"
+                                            className="w-full px-2 py-1 text-left hover:bg-gray-100 dark:hover:bg-gray-700 flex items-center space-x-2"
                                           >
                                             <div className="w-6 h-6 rounded-full bg-gray-200 dark:bg-gray-700 overflow-hidden">
                                               {profile.avatar_url ? (
