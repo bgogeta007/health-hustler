@@ -131,8 +131,8 @@ const Home: React.FC = () => {
                 <div className="rounded-full bg-gray-100 dark:bg-gray-600 w-16 h-16 flex items-center justify-center mb-4 mx-auto">
                   {benefit.icon}
                 </div>
-                <h3 className="text-xl font-semibold text-gray-800 mb-2 text-center">{benefit.title}</h3>
-                <p className="text-gray-600 text-center">{benefit.description}</p>
+                <h3 className="text-xl font-semibold text-gray-800 dark:text-gray-300 mb-2 text-center">{benefit.title}</h3>
+                <p className="text-gray-600 dark:text-gray-400 text-center">{benefit.description}</p>
               </motion.div>
             ))}
           </div>
