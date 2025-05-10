@@ -518,7 +518,7 @@ const CommunityPhotos: React.FC = () => {
                   />
 
                   {/* Actions */}
-                  <div className="p-4 border-b border-gray-100 dark:border-gray-700">
+                  <div className="p-4 border-b border-t border-gray-100 dark:border-gray-700">
                     <div className="flex items-center justify-between mb-4">
                       <div className="flex items-center space-x-4">
                         <button
