@@ -563,7 +563,7 @@ const CommunityPhotos: React.FC = () => {
                           <div key={comment.id} className="space-y-2">
                             {/* Comment */}
                             <div className="flex items-start space-x-3">
-                              <div className="w-8 h-8 rounded-full bg-gray-200 dark:bg-gray-700 overflow-hidden flex-shrink-0">
+                              <div className="w-7 h-7 rounded-full bg-gray-200 dark:bg-gray-700 overflow-hidden flex-shrink-0">
                                 {comment.user.avatar_url ? (
                                   <img
                                     src={comment.user.avatar_url}
@@ -577,7 +577,7 @@ const CommunityPhotos: React.FC = () => {
                                 )}
                               </div>
                               <div className="flex-grow">
-                                <div className="bg-gray-100 dark:bg-gray-700 rounded-lg px-4 py-2">
+                                <div className="bg-gray-100 dark:bg-gray-700 rounded-lg px-2 py-1">
                                   <p className="font-medium text-gray-800 dark:text-white">
                                     {comment.user.username}
                                   </p>
