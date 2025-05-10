@@ -302,7 +302,7 @@ const Quiz: React.FC = () => {
         {currentQuestion.type === 'select' && (
           <div className="space-y-3">
             <select
-              className={`w-full p-4 text-lg border rounded-xl bg-white dark:bg-gray-200 ${
+              className={`w-full p-4 text-lg border rounded-xl bg-white dark:bg-gray-700 ${
                 error 
                   ? 'border-red-500 dark:border-red-400' 
                   : 'border-gray-300 dark:border-gray-600'
