@@ -530,7 +530,7 @@ const CommunityPhotos: React.FC = () => {
                               photo.liked_by_user ? 'fill-red-500 text-red-500' : ''
                             }`}
                           />
-                          <span className="ml-2">{formatNumber(photo.likes)}</span>
+                          <span className="ml-1 mt-1 text-xs">{formatNumber(photo.likes)}</span>
                         </button>
                         <button
                           onClick={() => setExpandedComments(
