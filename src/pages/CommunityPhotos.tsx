@@ -526,7 +526,7 @@ const CommunityPhotos: React.FC = () => {
                           className="flex items-center text-gray-500 dark:text-gray-400 hover:text-red-500 dark:hover:text-red-400"
                         >
                           <Heart
-                            className={`h-4 w-4 ${
+                            className={`h-5 w-5 ${
                               photo.liked_by_user ? 'fill-red-500 text-red-500' : ''
                             }`}
                           />
@@ -540,11 +540,11 @@ const CommunityPhotos: React.FC = () => {
                           )}
                           className="flex items-center text-gray-500 dark:text-gray-400"
                         >
-                          <MessageCircle className="h-4 w-4" />
+                          <MessageCircle className="h-5 w-5" />
                           <span className="ml-2">{formatNumber(photo.comments_count)}</span>
                         </button>
                         <button className="text-gray-500 dark:text-gray-400">
-                          <Share2 className="h-4 w-4" />
+                          <Share2 className="h-5 w-5" />
                         </button>
                       </div>
                     </div>
