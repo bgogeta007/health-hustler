@@ -692,7 +692,7 @@ const CommunityPhotos: React.FC = () => {
 
                                     {/* Mentions Dropdown */}
                                     {showMentions && activeInputId === comment.id && mentionResults.length > 0 && (
-                                      <div className="absolute bottom-full left-0 w-full bg-white dark:bg-gray-800 rounded-lg shadow-lg mb-1 max-h-48 overflow-y-auto">
+                                      <div className="absolute bottom-full left-0 w-full bg-white dark:bg-gray-800 rounded-lg shadow-lg mb-1 max-h-20 overflow-y-auto">
                                         {mentionResults.map((profile) => (
                                           <button
                                             key={profile.id}
