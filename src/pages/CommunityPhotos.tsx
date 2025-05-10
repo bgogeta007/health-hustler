@@ -550,7 +550,7 @@ const CommunityPhotos: React.FC = () => {
                             <span className="font-medium mr-2">{photo.user.username}</span>
                             {photo.caption}
                           </p>
-                          <p className="text-xs text-gray-500 dark:text-gray-200">{formatDistanceToNow(new Date(photo.created_at), { addSuffix: true })}</p>
+                          <p className="text-xs text-gray-500 dark:text-gray-200">{formatDistanceToNow(new Date(photo.created_at))}</p>
                       </>
                     )}
                   </div>
