@@ -512,7 +512,7 @@ const CommunityPhotos: React.FC = () => {
                   />
 
                   {/* Actions */}
-                  <div className="p-2 border-b border-t border-gray-100 dark:border-gray-700">
+                  <div className="p-2 border-t border-gray-100 dark:border-gray-700">
                     <div className="flex items-center justify-between mb-4">
                       <div className="flex items-center space-x-2">
                         <button
@@ -555,9 +555,9 @@ const CommunityPhotos: React.FC = () => {
                   </div>
 
                   {/* Comments */}
-                  <div className="p-4">
+                  <div className="p-2">
                     {expandedComments.includes(photo.id) && (
-                      <div className="space-y-4">
+                      <div className="space-y-2">
                         {photo.comments.map((comment) => (
                           <div key={comment.id} className="space-y-2">
                             {/* Comment */}
