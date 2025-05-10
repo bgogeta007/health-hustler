@@ -633,7 +633,7 @@ const CommunityPhotos: React.FC = () => {
                                       )}
                                     </div>
                                     <div className="flex-grow">
-                                      <div className="bg-gray-100 dark:bg-gray-700 rounded-lg px-2 py-1">
+                                      <div className="flex items-center justify-between bg-gray-100 dark:bg-gray-700 rounded-lg px-2 py-1">
                                         <div>
                                           <p className="text-xs font-medium text-gray-800 dark:text-white">
                                             {reply.user.username}
