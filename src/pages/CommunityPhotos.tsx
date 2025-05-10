@@ -408,6 +408,7 @@ const CommunityPhotos: React.FC = () => {
     if (!inputRef) return;
 
     const text = parentId ? replyText[parentId] : commentText[photoId];
+    if (typeof text !== 'string') return;
     const beforeCursor = text.slice(0, cursorPosition);
     const afterCursor = text.slice(cursorPosition);
     const lastMentionIndex = beforeCursor.lastIndexOf('@');
