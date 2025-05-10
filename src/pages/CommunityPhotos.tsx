@@ -633,11 +633,11 @@ const CommunityPhotos: React.FC = () => {
                                       )}
                                     </div>
                                     <div className="flex-grow">
-                                      <div className="bg-gray-100 dark:bg-gray-700 rounded-lg px-4 py-2">
-                                        <p className="font-medium text-gray-800 dark:text-white">
+                                      <div className="bg-gray-100 dark:bg-gray-700 rounded-lg px-2 py-1">
+                                        <p className="text-xs font-medium text-gray-800 dark:text-white">
                                           {reply.user.username}
                                         </p>
-                                        <p className="text-gray-600 dark:text-gray-300">
+                                        <p className="text-sm text-gray-600 dark:text-gray-300">
                                           {reply.content}
                                         </p>
                                       </div>
@@ -760,7 +760,7 @@ const CommunityPhotos: React.FC = () => {
                                 }
                               }}
                               placeholder="Add a comment..."
-                              className="w-full px-4 py-2 bg-gray-100 dark:bg-gray-700 rounded-lg resize-none focus:outline-none focus:ring-2 focus:ring-green-500"
+                              className="w-full px-2 py-1 bg-gray-100 dark:bg-gray-700 rounded-lg resize-none focus:outline-none focus:ring-2 text-sm focus:ring-green-500"
                               rows={1}
                             />
 
