@@ -683,7 +683,7 @@ const CommunityPhotos: React.FC = () => {
                                         }
                                       }}
                                       placeholder="Reply to comment..."
-                                      className="w-full px-2 py-1 bg-gray-100 dark:bg-gray-700 rounded-lg resize-none focus:outline-none focus:ring-2 focus:ring-green-500"
+                                      className="w-full px-2 py-1 bg-gray-100 dark:bg-gray-700 rounded-lg text-sm resize-none focus:outline-none focus:ring-2 focus:ring-green-500"
                                       rows={1}
                                     />
 
