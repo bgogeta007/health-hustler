@@ -122,7 +122,7 @@ const Home: React.FC = () => {
             {benefits.map((benefit, index) => (
               <motion.div 
                 key={index}
-                className="bg-gray-50 dark:bg-gray-600 p-6 rounded-xl hover:shadow-lg transition-shadow duration-300"
+                className="bg-gray-50 dark:bg-gray-700 p-6 rounded-xl hover:shadow-lg transition-shadow duration-300"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
