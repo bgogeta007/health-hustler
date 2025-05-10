@@ -336,7 +336,7 @@ const Quiz: React.FC = () => {
               placeholder="Enter a number"
             />
             {currentQuestion.unit && (
-              <span className="absolute right-4 top-1/2 transform -translate-y-1/2 text-gray-500 dark:text-gray-400">
+              <span className="absolute right-4 top-1/2 transform -translate-y-1/2 text-gray-500 dark:text-gray-100">
                 {currentQuestion.unit}
               </span>
             )}
