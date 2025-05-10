@@ -500,7 +500,7 @@ const CommunityPhotos: React.FC = () => {
                         </p>
                     </div>
                     <button className="text-gray-500 dark:text-gray-400">
-                      <MoreVertical className="h-5 w-5" />
+                      <MoreVertical className="h-4 w-4" />
                     </button>
                   </div>
 
