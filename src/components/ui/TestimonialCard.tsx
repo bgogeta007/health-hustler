@@ -21,7 +21,7 @@ const TestimonialCard: React.FC<TestimonialProps> = ({ testimonial }) => {
       viewport={{ once: true }}
     >
       <Quote className="h-8 w-8 text-green-500 mb-4" />
-      <p className="text-gray-600 mb-6 italic">"{testimonial.testimonial}"</p>
+      <p className="text-gray-600 dark:text-gray-300 mb-6 italic">"{testimonial.testimonial}"</p>
       <div className="flex items-center">
         <img 
           src={testimonial.image} 
