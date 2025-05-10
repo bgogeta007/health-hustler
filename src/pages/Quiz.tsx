@@ -326,7 +326,7 @@ const Quiz: React.FC = () => {
               type="text"
               inputMode="numeric"
               pattern="[0-9]*"
-              className={`w-full p-4 text-lg text-center font-semibold border rounded-xl bg-white dark:bg-gray-700 ${
+              className={`w-full p-4 text-lg text-center font-semibold border rounded-xl bg-white dark:bg-gray-700 dark:text-gray-200 ${
                 error 
                   ? 'border-red-500 dark:border-red-400' 
                   : 'border-gray-300 dark:border-gray-600'
