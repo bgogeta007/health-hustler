@@ -4,7 +4,7 @@ import {
   Camera, 
   Heart, 
   MessageCircle, 
-  Share2, 
+  Send, 
   ChevronDown, 
   ChevronUp,
   MoreVertical,
@@ -523,7 +523,7 @@ const CommunityPhotos: React.FC = () => {
                       <div className="flex items-center space-x-2">
                         <button
                           onClick={() => toggleLike(photo.id)}
-                          className="flex items-center text-gray-500 dark:text-gray-400 hover:text-red-500 dark:hover:text-red-400"
+                          className="flex items-center text-black dark:text-gray-400 hover:text-red-500 dark:hover:text-red-400"
                         >
                           <Heart
                             className={`h-5 w-5 ${
@@ -538,13 +538,13 @@ const CommunityPhotos: React.FC = () => {
                               ? expandedComments.filter(id => id !== photo.id)
                               : [...expandedComments, photo.id]
                           )}
-                          className="flex items-center text-gray-500 dark:text-gray-400"
+                          className="flex items-center text-black dark:text-gray-400"
                         >
                           <MessageCircle className="h-5 w-5" />
                           <span className="ml-1 text-xs font-semibold">{formatNumber(photo.comments_count)}</span>
                         </button>
-                        <button className="text-gray-500 dark:text-gray-400">
-                          <Share2 className="h-5 w-5" />
+                        <button className="text-black dark:text-gray-400">
+                          <Send className="h-5 w-5" />
                         </button>
                       </div>
                     </div>
