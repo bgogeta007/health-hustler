@@ -616,7 +616,7 @@ const CommunityPhotos: React.FC = () => {
                               <div className="ml-11 space-y-2">
                                 {comment.replies?.map((reply) => (
                                   <div key={reply.id} className="flex items-start space-x-3">
-                                    <div className="w-8 h-8 rounded-full bg-gray-200 dark:bg-gray-700 overflow-hidden flex-shrink-0">
+                                    <div className="w-7 h-7 rounded-full bg-gray-200 dark:bg-gray-700 overflow-hidden flex-shrink-0">
                                       {reply.user.avatar_url ? (
                                         <img
                                           src={reply.user.avatar_url}
@@ -652,7 +652,7 @@ const CommunityPhotos: React.FC = () => {
 
                                 {/* Reply Input */}
                                 <div className="flex items-start space-x-3">
-                                  <div className="w-8 h-8 rounded-full bg-gray-200 dark:bg-gray-700 overflow-hidden flex-shrink-0">
+                                  <div className="w-7 h-7 rounded-full bg-gray-200 dark:bg-gray-700 overflow-hidden flex-shrink-0">
                                     {user?.avatar_url ? (
                                       <img
                                         src={user.avatar_url}
@@ -683,7 +683,7 @@ const CommunityPhotos: React.FC = () => {
                                         }
                                       }}
                                       placeholder="Reply to comment..."
-                                      className="w-full px-4 py-2 bg-gray-100 dark:bg-gray-700 rounded-lg resize-none focus:outline-none focus:ring-2 focus:ring-green-500"
+                                      className="w-full px-2 py-1 bg-gray-100 dark:bg-gray-700 rounded-lg resize-none focus:outline-none focus:ring-2 focus:ring-green-500"
                                       rows={1}
                                     />
 
