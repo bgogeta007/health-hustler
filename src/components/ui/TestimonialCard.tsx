@@ -29,7 +29,7 @@ const TestimonialCard: React.FC<TestimonialProps> = ({ testimonial }) => {
           className="w-12 h-12 rounded-full object-cover mr-4"
         />
         <div>
-          <h4 className="font-semibold text-gray-800 dark:text-gray-300">{testimonial.name}</h4>
+          <h4 className="font-semibold text-gray-800 dark:text-gray-200">{testimonial.name}</h4>
           <p className="text-green-500 text-sm">{testimonial.role}</p>
         </div>
       </div>
