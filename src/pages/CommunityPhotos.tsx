@@ -442,14 +442,14 @@ const CommunityPhotos: React.FC = () => {
     }, 0);
   };
 
-  const handleShare = async (photoId: string) => {
-      const shareUrl = `${window.location.origin}/community?photoId=${photoId}`;
+  const handleShare = async (photo: Photo) => {
+      const shareUrl = `${window.location.origin}/community?photoId=${photo.id}`;
     
       if (navigator.share) {
         try {
           await navigator.share({
             title: 'Check out this post on HealthHustler!',
-            text: post.caption || 'Fitness inspiration from the community',
+            text: photo.caption || 'Fitness inspiration from the community',
             url: shareUrl,
           });
         } catch (error) {
@@ -580,7 +580,7 @@ const CommunityPhotos: React.FC = () => {
                           <span className="ml-1 text-xs font-semibold">{formatNumber(photo.comments_count)}</span>
                         </button>
                         <button className="text-black dark:text-gray-400">
-                          <Send className="h-5 w-5" onClick={() => handleShare(photo.id)} />
+                          <Send className="h-5 w-5" onClick={() => handleShare(photo)} />
                         </button>
                       </div>
                     </div>
