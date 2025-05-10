@@ -591,7 +591,7 @@ const CommunityPhotos: React.FC = () => {
                                     className="flex items-center text-black dark:text-gray-400 hover:text-red-500 dark:hover:text-red-400"
                                   >
                                     <Heart
-                                      className={`h-5 w-5 ${
+                                      className={`h-4 w-4 ${
                                         comment.liked_by_user ? 'fill-red-500 text-red-500' : ''
                                       }`}
                                     />
