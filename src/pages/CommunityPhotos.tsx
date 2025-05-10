@@ -588,9 +588,14 @@ const CommunityPhotos: React.FC = () => {
                                   </div>
                                   <button
                                     onClick={() => toggleCommentLike(comment.id, photo.id)}
-                                    className="text-sm text-gray-500 dark:text-gray-400 hover:text-red-500 dark:hover:text-red-400"
+                                    className="flex items-center text-black dark:text-gray-400 hover:text-red-500 dark:hover:text-red-400"
                                   >
-                                    {comment.liked_by_user ? 'Unlike' : 'Like'} • {formatNumber(comment.likes)}
+                                    <Heart
+                                      className={`h-5 w-5 ${
+                                        comment.liked_by_user ? 'fill-red-500 text-red-500' : ''
+                                      }`}
+                                    />
+                                    <span className="ml-1 text-xs font-semibold">{formatNumber(comment.likes)}</span>
                                   </button>
                                 </div>
                                   <button
