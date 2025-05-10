@@ -15,6 +15,7 @@ import {
   Activity,
   Flame,
 } from "lucide-react";
+import DailyTip from '../components/DailyTip';
 
 interface HealthProfile {
   answers: { [key: number]: string | number };
@@ -104,6 +105,11 @@ const Dashboard: React.FC = () => {
             Welcome to your customized health journey. Here's your personalized
             plan based on your quiz results.
           </p>
+        </div>
+
+        {/* Daily Tip */}
+        <div className="mb-8">
+          <DailyTip />
         </div>
 
         {/* Tabs */}
