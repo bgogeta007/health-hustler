@@ -594,6 +594,7 @@ const CommunityPhotos: React.FC = () => {
                                     {comment.liked_by_user ? 'Unlike' : 'Like'} • {formatNumber(comment.likes)}
                                   </button>
                                 </div>
+                                </div>
                                   <button
                                     onClick={() => setExpandedReplies(
                                       expandedReplies.includes(comment.id)
@@ -604,7 +605,6 @@ const CommunityPhotos: React.FC = () => {
                                   >
                                     Reply • {comment.replies?.length || 0}
                                   </button>
-                                </div>
                               </div>
                             </div>
 
