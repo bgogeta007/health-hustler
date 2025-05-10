@@ -576,16 +576,17 @@ const CommunityPhotos: React.FC = () => {
                                   </div>
                                 )}
                               </div>
-                              <div className="flex flex-grow justify-between">
-                                <div className="bg-gray-100 dark:bg-gray-700 rounded-lg px-2 py-1">
-                                  <p className="font-medium text-xs text-gray-800 dark:text-white">
-                                    {comment.user.username}
-                                  </p>
-                                  <p className="text-gray-600 text-sm dark:text-gray-300">
-                                    {comment.content}
-                                  </p>
-                                </div>
-                                <div className="flex items-center space-x-4 mt-1 text-sm">
+                              <div className="flex-grow">
+                                <div className="flex items-center justify-between bg-gray-100 dark:bg-gray-700 rounded-lg px-2 py-1">
+                                  <div>
+                                    <p className="font-medium text-xs text-gray-800 dark:text-white">
+                                      {comment.user.username}
+                                    </p>
+                                    <p className="text-gray-600 text-sm dark:text-gray-300">
+                                      {comment.content}
+                                    </p>
+                                  </div>
+                                  <div className="flex items-center space-x-4 mt-1 text-sm">
                                   <button
                                     onClick={() => toggleCommentLike(comment.id, photo.id)}
                                     className="text-gray-500 dark:text-gray-400 hover:text-red-500 dark:hover:text-red-400"
@@ -602,6 +603,7 @@ const CommunityPhotos: React.FC = () => {
                                   >
                                     Reply • {comment.replies?.length || 0}
                                   </button>
+                                </div>
                                 </div>
                               </div>
                             </div>
