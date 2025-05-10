@@ -604,7 +604,7 @@ const CommunityPhotos: React.FC = () => {
                                         ? expandedReplies.filter(id => id !== comment.id)
                                         : [...expandedReplies, comment.id]
                                     )}
-                                    className="text-xs mt-1 text-gray-500 dark:text-gray-400"
+                                    className="text-xs mt-0.5 ml-1 text-gray-500 dark:text-gray-400"
                                   >
                                     Reply • {comment.replies?.length || 0}
                                   </button>
