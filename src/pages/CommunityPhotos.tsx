@@ -473,7 +473,7 @@ const CommunityPhotos: React.FC = () => {
               </p>
             </div>
           ) : (
-            <div className="space-y-4">
+            <div className="space-y-8">
               {photos.map((photo) => (
                 <motion.div
                   key={photo.id}
