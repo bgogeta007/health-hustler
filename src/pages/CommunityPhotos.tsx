@@ -770,7 +770,7 @@ const CommunityPhotos: React.FC = () => {
                                 {mentionResults.map((profile) => (
                                   <button
                                     key={profile.id}
-                                    onClick={() => insertMention(profile.username, photo.id)}
+                                    onClick={() => insertMention(profile.username, photo.id, comment.id)}
                                     className="w-full px-4 py-2 text-left hover:bg-gray-100 dark:hover:bg-gray-700 flex items-center space-x-2"
                                   >
                                     <div className="w-6 h-6 rounded-full bg-gray-200 dark:bg-gray-700 overflow-hidden">
