@@ -643,7 +643,7 @@ const CommunityPhotos: React.FC = () => {
                                           </p>
                                         </div>
                                         <button
-                                    onClick={() => toggleCommentLike(reply.id, photo.id)}
+                                    onClick={() => toggleCommentLike(reply.id, photo.id, true)}
                                     className="flex items-center text-black dark:text-gray-400 hover:text-red-500 dark:hover:text-red-400"
                                   >
                                     <Heart
