@@ -65,10 +65,20 @@ const CommunityPhotos: React.FC = () => {
   const [cursorPosition, setCursorPosition] = useState(0);
   const commentInputRefs = useRef<{ [key: string]: HTMLTextAreaElement }>({});
   const [activeInputId, setActiveInputId] = useState<string | null>(null);
+  const photoRefs = useRef<{ [key: string]: HTMLDivElement | null }>({});
 
   useEffect(() => {
     fetchPhotos();
   }, [user]);
+
+  useEffect(() => {
+  const params = new URLSearchParams(window.location.search);
+  const photoId = params.get('photoId');
+  if (photoId && photoRefs.current[photoId]) {
+    photoRefs.current[photoId]?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+}, [photos]);
+
 
   const fetchPhotos = async () => {
     try {
@@ -432,6 +442,31 @@ const CommunityPhotos: React.FC = () => {
     }, 0);
   };
 
+  const handleShare = async (photoId: string) => {
+      const shareUrl = `${window.location.origin}/community?photoId=${photoId}`;
+    
+      if (navigator.share) {
+        try {
+          await navigator.share({
+            title: 'Check out this post on HealthHustler!',
+            text: post.caption || 'Fitness inspiration from the community',
+            url: shareUrl,
+          });
+        } catch (error) {
+          console.error('Error sharing:', error);
+        }
+      } else {
+        try {
+          await navigator.clipboard.writeText(shareUrl);
+          alert('Link copied to clipboard!');
+        } catch (err) {
+          console.error('Could not copy link: ', err);
+        }
+      }
+    };
+
+
+
   const formatNumber = (num: number): string => {
     if (num >= 1000000) {
       return (num / 1000000).toFixed(1) + 'M';
@@ -480,6 +515,9 @@ const CommunityPhotos: React.FC = () => {
               {photos.map((photo) => (
                 <motion.div
                   key={photo.id}
+                  ref={(el) => {
+                    photoRefs.current[photo.id] = el;
+                  }}
                   layout
                   className="bg-white dark:bg-gray-800 rounded-xl shadow-md overflow-hidden w-full max-w-sm mx-auto"
                 >
@@ -542,7 +580,7 @@ const CommunityPhotos: React.FC = () => {
                           <span className="ml-1 text-xs font-semibold">{formatNumber(photo.comments_count)}</span>
                         </button>
                         <button className="text-black dark:text-gray-400">
-                          <Send className="h-5 w-5" />
+                          <Send className="h-5 w-5" onClick={() => handleShare(photo.id)} />
                         </button>
                       </div>
                     </div>
