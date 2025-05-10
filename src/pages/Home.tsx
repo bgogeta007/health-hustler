@@ -109,10 +109,10 @@ const Home: React.FC = () => {
       </section>
 
       {/* Benefits Section */}
-      <section className="py-16 bg-white">
+      <section className="py-16 bg-white dark:bg-gray-800">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-800 mb-4">Why Choose HealthHustler?</h2>
+            <h2 className="text-3xl font-bold text-gray-800 dark:text-gray-300 mb-4">Why Choose HealthHustler?</h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
               We're committed to helping you achieve your health goals through personalized guidance and support.
             </p>
