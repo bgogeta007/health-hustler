@@ -449,7 +449,7 @@ const CommunityPhotos: React.FC = () => {
   return (
     <div className="min-h-screen pt-24 pb-16 bg-gray-50 dark:bg-gray-900">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="max-w-3xl mx-auto">
+        <div className="max-w-2xl mx-auto">
           <div className="flex justify-between items-center mb-8">
             <h1 className="text-2xl font-bold text-gray-800 dark:text-white">Community Photos</h1>
             <Link
