@@ -477,7 +477,7 @@ const CommunityPhotos: React.FC = () => {
                 <motion.div
                   key={photo.id}
                   layout
-                  className="bg-white dark:bg-gray-800 rounded-xl shadow-md overflow-hidden"
+                  className="bg-white dark:bg-gray-800 rounded-xl shadow-md overflow-hidden w-full max-w-sm mx-auto"
                 >
                   {/* Photo Header */}
                   <div className="p-4 flex items-center justify-between">
