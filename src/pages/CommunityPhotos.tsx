@@ -513,8 +513,8 @@ const CommunityPhotos: React.FC = () => {
                   />
 
                   {/* Actions */}
-                  <div className="p-2 border-t border-gray-100 dark:border-gray-700">
-                    <div className="flex items-center justify-between mb-0">
+                  <div className="p-0 border-t border-gray-100 dark:border-gray-700">
+                    <div className="flex items-center justify-between mb-2">
                       <div className="flex items-center space-x-2">
                         <button
                           onClick={() => toggleLike(photo.id)}
