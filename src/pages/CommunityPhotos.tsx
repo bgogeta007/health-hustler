@@ -480,7 +480,7 @@ const CommunityPhotos: React.FC = () => {
                   className="bg-white dark:bg-gray-800 rounded-xl shadow-md overflow-hidden w-full max-w-sm mx-auto"
                 >
                   {/* Photo Header */}
-                  <div className="p-4 flex items-center justify-between border-b border-gray-100 dark:border-gray-700">
+                  <div className="p-2 flex items-center justify-between border-b border-gray-100 dark:border-gray-700">
                     <div className="flex items-center space-x-3">
                       <div className="w-10 h-10 rounded-full bg-gray-200 dark:bg-gray-700 overflow-hidden">
                         {photo.user.avatar_url ? (
