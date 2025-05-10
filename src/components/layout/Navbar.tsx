@@ -154,7 +154,7 @@ const Navbar: React.FC<NavbarProps> = ({ scrolled }) => {
               <Dumbbell size={32} className="text-green-500" />
               <span
                 className={`text-xl font-bold ${
-                  isDarkMode ? "text-white" : "text-gray-800"
+                  isDarkMode ? "text-white" : "text-green-500"
                 }`}
               >
                 HealthHustler
