@@ -14,7 +14,7 @@ interface TestimonialProps {
 const TestimonialCard: React.FC<TestimonialProps> = ({ testimonial }) => {
   return (
     <motion.div 
-      className="bg-gray-50 p-6 rounded-xl hover:shadow-lg transition-shadow duration-300"
+      className="bg-gray-50 dark:bg-gray-700 p-6 rounded-xl hover:shadow-lg transition-shadow duration-300"
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
