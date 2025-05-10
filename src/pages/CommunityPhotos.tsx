@@ -64,6 +64,7 @@ const CommunityPhotos: React.FC = () => {
   const [showMentions, setShowMentions] = useState(false);
   const [cursorPosition, setCursorPosition] = useState(0);
   const commentInputRefs = useRef<{ [key: string]: HTMLTextAreaElement }>({});
+  const [activeInputId, setActiveInputId] = useState<string | null>(null);
 
   useEffect(() => {
     fetchPhotos();
@@ -380,7 +381,9 @@ const CommunityPhotos: React.FC = () => {
     }
   };
 
-  const handleMentionSearch = async (text: string) => {
+  const handleMentionSearch = async (text: string, inputId: string) => {
+    setActiveInputId(inputId);
+    
     const lastMention = text.match(/@(\w*)$/);
     if (lastMention) {
       const searchTerm = lastMention[1].toLowerCase();
@@ -408,7 +411,6 @@ const CommunityPhotos: React.FC = () => {
     if (!inputRef) return;
 
     const text = parentId ? replyText[parentId] : commentText[photoId];
-    if (typeof text !== 'string') return;
     const beforeCursor = text.slice(0, cursorPosition);
     const afterCursor = text.slice(cursorPosition);
     const lastMentionIndex = beforeCursor.lastIndexOf('@');
@@ -674,7 +676,7 @@ const CommunityPhotos: React.FC = () => {
                                       value={replyText[comment.id] || ''}
                                       onChange={(e) => {
                                         setReplyText({ ...replyText, [comment.id]: e.target.value });
-                                        handleMentionSearch(e.target.value);
+                                        handleMentionSearch(e.target.value, comment.id);
                                         setCursorPosition(e.target.selectionStart);
                                       }}
                                       onKeyPress={(e) => {
@@ -689,7 +691,7 @@ const CommunityPhotos: React.FC = () => {
                                     />
 
                                     {/* Mentions Dropdown */}
-                                    {showMentions && mentionResults.length > 0 && (
+                                    {showMentions && activeInputId === comment.id && mentionResults.length > 0 && (
                                       <div className="absolute bottom-full left-0 w-full bg-white dark:bg-gray-800 rounded-lg shadow-lg mb-1 max-h-48 overflow-y-auto">
                                         {mentionResults.map((profile) => (
                                           <button
@@ -749,7 +751,7 @@ const CommunityPhotos: React.FC = () => {
                               onChange={(e) => {
                                 setCommentText({ ...commentText, [photo.id]: e.target.value });
                                 handleMentionSearch(e.target.value);
-                                setCursorPosition(e.target.selectionStart);
+                                setCursorPosition(e.target.selectionStart, photo.id);
                               }}
                               onKeyPress={(e) => {
                                 if (e.key === 'Enter' && !e.shiftKey) {
@@ -763,7 +765,7 @@ const CommunityPhotos: React.FC = () => {
                             />
 
                             {/* Mentions Dropdown */}
-                            {showMentions && mentionResults.length > 0 && (
+                            {showMentions && activeInputId === photo.id && mentionResults.length > 0 && (
                               <div className="absolute bottom-full left-0 w-full bg-white dark:bg-gray-800 rounded-lg shadow-lg mb-1 max-h-48 overflow-y-auto">
                                 {mentionResults.map((profile) => (
                                   <button
