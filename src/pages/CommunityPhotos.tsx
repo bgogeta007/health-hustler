@@ -544,11 +544,13 @@ const CommunityPhotos: React.FC = () => {
                     </div>
 
                     {photo.caption && (
-                      <p className="text-sm text-gray-800 dark:text-white mb-2">
-                        <span className="font-medium mr-2">{photo.user.username}</span>
-                        {photo.caption}
-                      </p>
-                      <p>{photo.created_at}</p>
+                      <>
+                          <p className="text-sm text-gray-800 dark:text-white mb-2">
+                            <span className="font-medium mr-2">{photo.user.username}</span>
+                            {photo.caption}
+                          </p>
+                          <p>{photo.created_at}</p>
+                      </>
                     )}
                   </div>
 
