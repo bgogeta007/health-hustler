@@ -178,7 +178,7 @@ const Home: React.FC = () => {
                 <div className="text-5xl font-bold text-green-100 dark:text-green-400 absolute top-0 left-0">{step.number}</div>
                 <div className="relative z-10 mt-8">
                   <h3 className="text-xl font-semibold text-gray-800 dark:text-gray-300 mb-2">{step.title}</h3>
-                  <p className="text-gray-600 dark:text-gray-200">{step.description}</p>
+                  <p className="text-gray-600 dark:text-gray-400">{step.description}</p>
                 </div>
               </motion.div>
             ))}
