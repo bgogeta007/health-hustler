@@ -541,7 +541,7 @@ const CommunityPhotos: React.FC = () => {
                           className="flex items-center text-gray-500 dark:text-gray-400"
                         >
                           <MessageCircle className="h-5 w-5" />
-                          <span className="ml-2">{formatNumber(photo.comments_count)}</span>
+                          <span className="ml-1 mt-1 text-xs">{formatNumber(photo.comments_count)}</span>
                         </button>
                         <button className="text-gray-500 dark:text-gray-400">
                           <Share2 className="h-5 w-5" />
