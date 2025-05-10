@@ -175,10 +175,10 @@ const Home: React.FC = () => {
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 viewport={{ once: true }}
               >
-                <div className="text-5xl font-bold text-green-100 dark:text-green-500 absolute top-0 left-0">{step.number}</div>
+                <div className="text-5xl font-bold text-green-100 dark:text-green-400 absolute top-0 left-0">{step.number}</div>
                 <div className="relative z-10 mt-8">
-                  <h3 className="text-xl font-semibold text-gray-800 mb-2">{step.title}</h3>
-                  <p className="text-gray-600">{step.description}</p>
+                  <h3 className="text-xl font-semibold text-gray-800 dark:text-gray-300 mb-2">{step.title}</h3>
+                  <p className="text-gray-600 dark:text-gray-200">{step.description}</p>
                 </div>
               </motion.div>
             ))}
