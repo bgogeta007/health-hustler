@@ -113,7 +113,7 @@ const Home: React.FC = () => {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-gray-800 dark:text-gray-300 mb-4">Why Choose HealthHustler?</h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+            <p className="text-lg text-gray-600 dark:text-gray-200 max-w-2xl mx-auto">
               We're committed to helping you achieve your health goals through personalized guidance and support.
             </p>
           </div>
@@ -122,7 +122,7 @@ const Home: React.FC = () => {
             {benefits.map((benefit, index) => (
               <motion.div 
                 key={index}
-                className="bg-gray-50 p-6 rounded-xl hover:shadow-lg transition-shadow duration-300"
+                className="bg-gray-50 dark:bg-gray-600 p-6 rounded-xl hover:shadow-lg transition-shadow duration-300"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
