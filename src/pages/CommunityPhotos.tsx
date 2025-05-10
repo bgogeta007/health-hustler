@@ -495,15 +495,9 @@ const CommunityPhotos: React.FC = () => {
                           </div>
                         )}
                       </div>
-                      <div>
                         <p className="font-medium text-gray-800 dark:text-white">
                           {photo.user.username}
                         </p>
-                        <div className="flex items-center text-sm text-gray-500 dark:text-gray-400">
-                          <Calendar className="h-4 w-4 mr-1" />
-                          Week {photo.week_number}
-                        </div>
-                      </div>
                     </div>
                     <button className="text-gray-500 dark:text-gray-400">
                       <MoreVertical className="h-5 w-5" />
