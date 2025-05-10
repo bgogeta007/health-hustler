@@ -548,6 +548,7 @@ const CommunityPhotos: React.FC = () => {
                         <span className="font-medium mr-2">{photo.user.username}</span>
                         {photo.caption}
                       </p>
+                      <p>{photo.created_at}</p>
                     )}
                   </div>
 
