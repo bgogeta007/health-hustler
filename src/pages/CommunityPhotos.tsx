@@ -578,10 +578,10 @@ const CommunityPhotos: React.FC = () => {
                               </div>
                               <div className="flex-grow">
                                 <div className="bg-gray-100 dark:bg-gray-700 rounded-lg px-2 py-1">
-                                  <p className="font-medium text-gray-800 dark:text-white">
+                                  <p className="font-medium text-xs text-gray-800 dark:text-white">
                                     {comment.user.username}
                                   </p>
-                                  <p className="text-gray-600 dark:text-gray-300">
+                                  <p className="text-gray-600 text-sm dark:text-gray-300">
                                     {comment.content}
                                   </p>
                                 </div>
