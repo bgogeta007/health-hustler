@@ -634,20 +634,25 @@ const CommunityPhotos: React.FC = () => {
                                     </div>
                                     <div className="flex-grow">
                                       <div className="bg-gray-100 dark:bg-gray-700 rounded-lg px-2 py-1">
-                                        <p className="text-xs font-medium text-gray-800 dark:text-white">
-                                          {reply.user.username}
-                                        </p>
-                                        <p className="text-sm text-gray-600 dark:text-gray-300">
-                                          {reply.content}
-                                        </p>
-                                      </div>
-                                      <div className="flex items-center space-x-4 mt-1 text-sm">
+                                        <div>
+                                          <p className="text-xs font-medium text-gray-800 dark:text-white">
+                                            {reply.user.username}
+                                          </p>
+                                          <p className="text-sm text-gray-600 dark:text-gray-300">
+                                            {reply.content}
+                                          </p>
+                                        </div>
                                         <button
-                                          onClick={() => toggleCommentLike(reply.id, photo.id, true)}
-                                          className="text-gray-500 dark:text-gray-400 hover:text-red-500 dark:hover:text-red-400"
-                                        >
-                                          {reply.liked_by_user ? 'Unlike' : 'Like'} • {formatNumber(reply.likes)}
-                                        </button>
+                                    onClick={() => toggleCommentLike(reply.id, photo.id)}
+                                    className="flex items-center text-black dark:text-gray-400 hover:text-red-500 dark:hover:text-red-400"
+                                  >
+                                    <Heart
+                                      className={`h-4 w-4 ${
+                                        reply.liked_by_user ? 'fill-red-500 text-red-500' : ''
+                                      }`}
+                                    />
+                                    <span className="ml-1 text-xs font-semibold">{formatNumber(reply.likes)}</span>
+                                  </button>
                                       </div>
                                     </div>
                                   </div>
