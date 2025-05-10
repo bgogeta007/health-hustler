@@ -786,7 +786,7 @@ const CommunityPhotos: React.FC = () => {
                                         </div>
                                       )}
                                     </div>
-                                    <span className="font-medium">{profile.username}</span>
+                                    <span className="text-xs font-medium">{profile.username}</span>
                                     <span className="text-gray-500 dark:text-gray-400 text-sm">
                                       {profile.full_name}
                                     </span>
