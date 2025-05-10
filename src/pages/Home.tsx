@@ -143,8 +143,8 @@ const Home: React.FC = () => {
       <section className="py-16 bg-gray-50 dark:bg-gray-700">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-800 mb-4">How It Works</h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+            <h2 className="text-3xl font-bold text-gray-800 dark:text-gray-300 mb-4">How It Works</h2>
+            <p className="text-lg text-gray-600 dark:text-gray-200 max-w-2xl mx-auto">
               Three simple steps to your personalized health journey
             </p>
           </div>
