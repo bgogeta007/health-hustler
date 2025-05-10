@@ -128,7 +128,7 @@ const Home: React.FC = () => {
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 viewport={{ once: true }}
               >
-                <div className="rounded-full bg-gray-100 w-16 h-16 flex items-center justify-center mb-4 mx-auto">
+                <div className="rounded-full bg-gray-100 dark:bg-gray-600 w-16 h-16 flex items-center justify-center mb-4 mx-auto">
                   {benefit.icon}
                 </div>
                 <h3 className="text-xl font-semibold text-gray-800 mb-2 text-center">{benefit.title}</h3>
