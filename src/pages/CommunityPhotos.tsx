@@ -556,7 +556,7 @@ const CommunityPhotos: React.FC = () => {
 
                   {/* Comments */}
                   <div className="p-4">
-                    {expandedComments.includes(photo.id) ? (
+                    {expandedComments.includes(photo.id) && (
                       <div className="space-y-4">
                         {photo.comments.map((comment) => (
                           <div key={comment.id} className="space-y-2">
@@ -788,13 +788,6 @@ const CommunityPhotos: React.FC = () => {
                           </div>
                         </div>
                       </div>
-                    ) : (
-                      <button
-                        onClick={() => setExpandedComments([...expandedComments, photo.id])}
-                        className="text-gray-500 dark:text-gray-400 text-sm"
-                      >
-                        View all {photo.comments_count} comments
-                      </button>
                     )}
                   </div>
                 </motion.div>
