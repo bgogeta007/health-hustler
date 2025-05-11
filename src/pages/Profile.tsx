@@ -30,7 +30,7 @@ const Profile: React.FC = () => {
           .from('profiles')
           .select('full_name, email, avatar_url')
           .eq('id', user.id)
-          .single();
+          .maybeSingle();
 
         if (error) throw error;
 
