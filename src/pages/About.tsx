@@ -143,25 +143,24 @@ const About: React.FC = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
               {
-                name: "Dr. Emily Chen",
+                name: "Amy Shapiro",
                 role: "Nutrition Specialist",
                 bio: "With over 10 years of experience in clinical nutrition, Dr. Chen helps develop our personalized diet plans.",
                 image:
-                  "https://images.pexels.com/photos/5327585/pexels-photo-5327585.jpeg?auto=compress&cs=tinysrgb&w=600",
+                  "https://www.livewholier.com/cdn/shop/articles/Amy_Shapiro_Street-4-Claudine_Williams-square.png?v=1664163290",
               },
               {
-                name: "James Wilson",
+                name: "Jesse K.",
                 role: "Certified Fitness Coach",
                 bio: "Former professional athlete with a passion for helping people find exercise routines they actually enjoy.",
-                image:
-                  "https://images.pexels.com/photos/1681010/pexels-photo-1681010.jpeg?auto=compress&cs=tinysrgb&w=600",
+                image: "https://fitnesstrainer.imgix.net/uploads/instructor/picture/24330/35F77D51-1F6C-458C-9D51-0CBDF168878E.jpeg?auto=format%2Cenhance%2Credeye&h=140&w=140&fit=facearea&facepad=4",
               },
               {
-                name: "Maria Rodriguez",
+                name: "Dr Clodagh Campbell",
                 role: "Wellness Psychologist",
                 bio: "Specializes in the psychology of habit formation and sustainable behavioral change for long-term health.",
                 image:
-                  "https://images.pexels.com/photos/762020/pexels-photo-762020.jpeg?auto=compress&cs=tinysrgb&w=600",
+                  "https://images.squarespace-cdn.com/content/v1/632d9ebb021c85460fb1e095/9a3d37f8-e139-484d-958c-b7f44b648dc7/Clodagh+Closeup+3.jpg?format=2500w",
               },
             ].map((member, index) => (
               <motion.div
