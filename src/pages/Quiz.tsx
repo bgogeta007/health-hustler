@@ -32,7 +32,7 @@ const questions: Question[] = [
     id: 2,
     question: 'What is your gender?',
     type: 'select',
-    options: ['Male', 'Female', 'Other'],
+    options: ['Male', 'Female'],
     required: true
   },
   {
