@@ -65,10 +65,22 @@ const CommunityPhotos: React.FC = () => {
   const [cursorPosition, setCursorPosition] = useState(0);
   const commentInputRefs = useRef<{ [key: string]: HTMLTextAreaElement }>({});
   const [activeInputId, setActiveInputId] = useState<string | null>(null);
+  const photoRefs = useRef<{ [key: string]: HTMLDivElement | null }>({});
 
   useEffect(() => {
     fetchPhotos();
   }, [user]);
+
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    const photoId = params.get("photoId");
+    if (photoId && photoRefs.current[photoId]) {
+      photoRefs.current[photoId]?.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }
+  }, [photos]);
 
   const fetchPhotos = async () => {
     try {
@@ -478,6 +490,29 @@ const CommunityPhotos: React.FC = () => {
     }, 0);
   };
 
+  const handleShare = async (photo: Photo) => {
+    const shareUrl = `${window.location.origin}/community?photoId=${photo.id}`;
+
+    if (navigator.share) {
+      try {
+        await navigator.share({
+          title: "Check out this post on GreenLean!",
+          text: photo.caption || "Fitness inspiration from the community",
+          url: shareUrl,
+        });
+      } catch (error) {
+        console.error("Error sharing:", error);
+      }
+    } else {
+      try {
+        await navigator.clipboard.writeText(shareUrl);
+        alert("Link copied to clipboard!");
+      } catch (err) {
+        console.error("Could not copy link: ", err);
+      }
+    }
+  };
+
   const formatNumber = (num: number): string => {
     if (num >= 1000000) {
       return (num / 1000000).toFixed(1) + "M";
@@ -528,6 +563,9 @@ const CommunityPhotos: React.FC = () => {
               {photos.map((photo) => (
                 <motion.div
                   key={photo.id}
+                  ref={(el) => {
+                    photoRefs.current[photo.id] = el;
+                  }}
                   layout
                   className="bg-white dark:bg-gray-800 rounded-xl shadow-md overflow-hidden w-full max-w-sm mx-auto"
                 >
@@ -551,9 +589,9 @@ const CommunityPhotos: React.FC = () => {
                         {photo.user.username}
                       </p>
                     </div>
-                    <button className="text-gray-500 dark:text-gray-400">
+                    {/* <button className="text-gray-500 dark:text-gray-400">
                       <MoreVertical className="h-4 w-4" />
-                    </button>
+                    </button> */}
                   </div>
 
                   {/* Photo */}
@@ -600,7 +638,10 @@ const CommunityPhotos: React.FC = () => {
                           </span>
                         </button>
                         <button className="text-black dark:text-gray-400">
-                          <Send className="h-5 w-5" />
+                          <Send
+                            className="h-5 w-5"
+                            onClick={() => handleShare(photo)}
+                          />
                         </button>
                       </div>
                     </div>
@@ -710,15 +751,15 @@ const CommunityPhotos: React.FC = () => {
                                       )}
                                     </div>
                                     <div className="flex-grow">
-                                      <div className="bg-gray-100 dark:bg-gray-700 rounded-lg px-2 py-1">
-                                        <p className="text-xs font-medium text-gray-800 dark:text-white">
-                                          {reply.user.username}
-                                        </p>
-                                        <p className="text-sm text-gray-600 dark:text-gray-300">
-                                          {reply.content}
-                                        </p>
-                                      </div>
-                                      <div className="flex items-center space-x-4 mt-1 text-sm">
+                                      <div className="flex items-center justify-between bg-gray-100 dark:bg-gray-700 rounded-lg px-2 py-1">
+                                        <div>
+                                          <p className="text-xs font-medium text-gray-800 dark:text-white">
+                                            {reply.user.username}
+                                          </p>
+                                          <p className="text-sm text-gray-600 dark:text-gray-300">
+                                            {reply.content}
+                                          </p>
+                                        </div>
                                         <button
                                           onClick={() =>
                                             toggleCommentLike(
@@ -727,12 +768,18 @@ const CommunityPhotos: React.FC = () => {
                                               true
                                             )
                                           }
-                                          className="text-gray-500 dark:text-gray-400 hover:text-red-500 dark:hover:text-red-400"
+                                          className="flex items-center text-black dark:text-gray-400 hover:text-red-500 dark:hover:text-red-400"
                                         >
-                                          {reply.liked_by_user
-                                            ? "Unlike"
-                                            : "Like"}{" "}
-                                          • {formatNumber(reply.likes)}
+                                          <Heart
+                                            className={`h-4 w-4 ${
+                                              reply.liked_by_user
+                                                ? "fill-red-500 text-red-500"
+                                                : ""
+                                            }`}
+                                          />
+                                          <span className="ml-1 text-xs font-semibold">
+                                            {formatNumber(reply.likes)}
+                                          </span>
                                         </button>
                                       </div>
                                     </div>

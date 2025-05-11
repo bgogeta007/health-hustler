@@ -121,13 +121,13 @@ const Home: React.FC = () => {
       </section>
 
       {/* Benefits Section */}
-      <section className="py-16 bg-white">
+      <section className="py-16 bg-white dark:bg-gray-800">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-800 mb-4">
+            <h2 className="text-3xl font-bold text-gray-800 dark:text-gray-300 mb-4">
               Why Choose GreenLean?
             </h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+            <p className="text-lg text-gray-600 dark:text-gray-200 max-w-2xl mx-auto">
               We're committed to helping you achieve your health goals through
               personalized guidance and support.
             </p>
@@ -137,19 +137,19 @@ const Home: React.FC = () => {
             {benefits.map((benefit, index) => (
               <motion.div
                 key={index}
-                className="bg-gray-50 p-6 rounded-xl hover:shadow-lg transition-shadow duration-300"
+                className="bg-gray-50 dark:bg-gray-700 p-6 rounded-xl hover:shadow-lg transition-shadow duration-300"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 viewport={{ once: true }}
               >
-                <div className="rounded-full bg-gray-100 w-16 h-16 flex items-center justify-center mb-4 mx-auto">
+                <div className="rounded-full bg-gray-100 dark:bg-gray-600 w-16 h-16 flex items-center justify-center mb-4 mx-auto">
                   {benefit.icon}
                 </div>
-                <h3 className="text-xl font-semibold text-gray-800 mb-2 text-center">
+                <h3 className="text-xl font-semibold text-gray-800 dark:text-gray-300 mb-2 text-center">
                   {benefit.title}
                 </h3>
-                <p className="text-gray-600 text-center">
+                <p className="text-gray-600 dark:text-gray-400 text-center">
                   {benefit.description}
                 </p>
               </motion.div>
@@ -159,13 +159,13 @@ const Home: React.FC = () => {
       </section>
 
       {/* How It Works Section */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-16 bg-gray-50 dark:bg-gray-700">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-800 mb-4">
+            <h2 className="text-3xl font-bold text-gray-800 dark:text-gray-300 mb-4">
               How It Works
             </h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+            <p className="text-lg text-gray-600 dark:text-gray-200 max-w-2xl mx-auto">
               Three simple steps to your personalized health journey
             </p>
           </div>
@@ -199,14 +199,16 @@ const Home: React.FC = () => {
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 viewport={{ once: true }}
               >
-                <div className="text-5xl font-bold text-green-100 absolute top-0 left-0">
+                <div className="text-5xl font-bold text-green-200 dark:text-green-400 absolute top-0 left-0">
                   {step.number}
                 </div>
                 <div className="relative z-10 mt-8">
-                  <h3 className="text-xl font-semibold text-gray-800 mb-2">
+                  <h3 className="text-xl font-semibold text-gray-800 dark:text-gray-300 mb-2">
                     {step.title}
                   </h3>
-                  <p className="text-gray-600">{step.description}</p>
+                  <p className="text-gray-600 dark:text-gray-400">
+                    {step.description}
+                  </p>
                 </div>
               </motion.div>
             ))}
@@ -224,13 +226,13 @@ const Home: React.FC = () => {
       </section>
 
       {/* Testimonials Section */}
-      <section className="py-16 bg-white">
+      <section className="py-16 bg-white dark:bg-gray-800">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-800 mb-4">
+            <h2 className="text-3xl font-bold text-gray-800 dark:text-gray-300 mb-4">
               Success Stories
             </h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+            <p className="text-lg text-gray-600 dark:text-gray-200 max-w-2xl mx-auto">
               Real people, real results. Here's what our community has to say.
             </p>
           </div>
