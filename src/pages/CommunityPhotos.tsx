@@ -386,7 +386,7 @@ const CommunityPhotos: React.FC = () => {
           )
         `
         )
-        .single();
+        .maybeSingle();
 
       if (error) throw error;
 
