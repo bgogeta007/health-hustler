@@ -142,7 +142,7 @@ const exercisesData: { [key: number]: Exercise } = {
     duration: '35 min',
     intensity: 'High',
     category: 'Cardio',
-    videoId: 'yZB5TpdDsa4',
+    videoId: 'oBNTQGRCuRw',
     benefits: [
       'Maximizes calorie burn',
       'Improves cardiovascular endurance',
