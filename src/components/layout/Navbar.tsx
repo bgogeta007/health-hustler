@@ -151,7 +151,7 @@ const Navbar: React.FC<NavbarProps> = ({ scrolled }) => {
           <div className="flex justify-between items-center py-4">
             {/* Logo */}
             <Link to="/" className="flex items-center space-x-2">
-              <Dumbbell size={32} className="text-green-500" />
+              <Leaf size={32} className="text-green-500" />
               <span
                 className={`text-xl font-bold ${
                   isDarkMode ? "text-white" : "text-green-500"
