@@ -30,7 +30,8 @@ export const PlatformProvider: React.FC<{ children: React.ReactNode }> = ({
       const { data } = await supabase
         .from("platform_settings")
         .select("*")
-        .single();
+        .limit(1)
+        .maybeSingle();
 
       if (data) {
         applyThemeSettings(data);
