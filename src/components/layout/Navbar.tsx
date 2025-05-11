@@ -51,7 +51,7 @@ const Navbar: React.FC<NavbarProps> = ({ scrolled }) => {
           .from("profiles")
           .select("avatar_url, full_name")
           .eq("id", user.id)
-          .single();
+          .maybeSingle();
 
         if (profileError) throw profileError;
         setProfile(profileData);
