@@ -10,7 +10,7 @@ const Footer: React.FC = () => {
           {/* Brand */}
           <div className="col-span-1">
             <Link to="/" className="flex items-center space-x-2 mb-4">
-              <Dumbbell size={32} className="text-green-400" />
+              <Leaf size={32} className="text-green-400" />
               <span className="text-xl font-bold">GreenLean</span>
             </Link>
             <p className="text-gray-300 mb-4">
