@@ -42,7 +42,7 @@ const AuthModal: React.FC<AuthModalProps> = ({ isOpen, onClose, defaultMode = 's
         .from('profiles')
         .select('username')
         .eq('username', username.toLowerCase())
-        .single();
+        .maybeSingle();
 
       setUsernameAvailable(!data);
     } catch (error) {
