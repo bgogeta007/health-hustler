@@ -19,7 +19,7 @@ CREATE TABLE IF NOT EXISTS platform_settings (
   id uuid PRIMARY KEY DEFAULT gen_random_uuid(),
   theme_color text DEFAULT '#22C55E',
   theme_mode text DEFAULT 'light' CHECK (theme_mode IN ('light', 'dark', 'system')),
-  platform_name text DEFAULT 'HealthHustler',
+  platform_name text DEFAULT 'GreenLean',
   logo_url text,
   favicon_url text,
   admin_2fa_required boolean DEFAULT false,
@@ -66,7 +66,7 @@ INSERT INTO platform_settings (
 ) VALUES (
   '#22C55E',
   'light',
-  'HealthHustler',
+  'GreenLean',
   false,
   5,
   60,

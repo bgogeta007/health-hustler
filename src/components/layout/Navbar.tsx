@@ -157,7 +157,7 @@ const Navbar: React.FC<NavbarProps> = ({ scrolled }) => {
                   isDarkMode ? "text-white" : "text-gray-800"
                 }`}
               >
-                HealthHustler
+                GreenLean
               </span>
             </Link>
 
