@@ -73,7 +73,8 @@ const SettingsTab: React.FC = () => {
       const { data, error } = await supabase
         .from("platform_settings")
         .select("*")
-        .single();
+        .limit(1)
+        .maybeSingle();
 
       if (error) throw error;
       setSettings(data);
