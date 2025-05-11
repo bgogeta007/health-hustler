@@ -153,7 +153,7 @@ const About: React.FC = () => {
                 name: "Jesse K.",
                 role: "Certified Fitness Coach",
                 bio: "Former professional athlete with a passion for helping people find exercise routines they actually enjoy.",
-                image: "https://fitnesstrainer.imgix.net/uploads/instructor/picture/24330/35F77D51-1F6C-458C-9D51-0CBDF168878E.jpeg?auto=format%2Cenhance%2Credeye&h=140&w=140&fit=facearea&facepad=4",
+                image: "https://fitnesstrainer.imgix.net/uploads/instructor/picture/24330/35F77D51-1F6C-458C-9D51-0CBDF168878E.jpeg?auto=format%2Cenhance%2Credeye&h=250&w=250&fit=facearea&facepad=4",
               },
               {
                 name: "Dr Clodagh Campbell",
