@@ -399,7 +399,7 @@ const Challenges: React.FC = () => {
                   </div>
                   <div className="flex items-center">
                     <Award className="h-5 w-5 text-yellow-500 mr-1" />
-                    <span className="font-medium">{challenge.points}</span>
+                    <span className="font-medium dark:text-gray-200">{challenge.points}</span>
                   </div>
                 </div>
 
