@@ -34,7 +34,7 @@ const QuizResult: React.FC = () => {
           .select('*')
           .eq('id', id)
           .eq('user_id', user.id)
-          .single();
+          .maybeSingle();
 
         if (error) throw error;
 
