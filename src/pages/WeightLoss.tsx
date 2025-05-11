@@ -68,7 +68,7 @@ const exercises: Exercise[] = [
     intensity: 'Low',
     category: 'Strength'
   },
-  7: {
+  {
     id: 7,
     title: 'Pilates for Core Strength',
     description: 'Focus on core strength and flexibility with controlled, precise movements.',
@@ -77,7 +77,7 @@ const exercises: Exercise[] = [
     intensity: 'Medium',
     category: 'Flexibility'
   },
-  8: {
+  {
     id: 8,
     title: 'Bodyweight Circuit Training',
     description: 'Effective full-body workout using only your body weight for resistance.',
@@ -86,7 +86,7 @@ const exercises: Exercise[] = [
     intensity: 'High',
     category: 'Strength'
   },
-  9: {
+  {
     id: 9,
     title: 'Power Walking Routine',
     description: 'Brisk walking workout with intervals to boost calorie burn and endurance.',
@@ -95,7 +95,7 @@ const exercises: Exercise[] = [
     intensity: 'Low',
     category: 'Cardio'
   },
-  10: {
+  {
     id: 10,
     title: 'Resistance Band Workout',
     description: 'Full-body strength training using resistance bands for progressive overload.',
@@ -104,7 +104,7 @@ const exercises: Exercise[] = [
     intensity: 'Medium',
     category: 'Strength'
   },
-  11: {
+  {
     id: 11,
     title: 'Dynamic Stretching Routine',
     description: 'Improve flexibility and mobility with dynamic stretching exercises.',
@@ -113,7 +113,7 @@ const exercises: Exercise[] = [
     intensity: 'Low',
     category: 'Flexibility'
   },
-  12: {
+  {
     id: 12,
     title: 'Tabata Training',
     description: 'High-intensity interval training with 20 seconds work and 10 seconds rest.',
