@@ -121,20 +121,6 @@ const Contact: React.FC = () => {
                 <div className="flex items-start">
                   <div className="flex-shrink-0">
                     <div className="w-10 h-10 rounded-full bg-green-100 flex items-center justify-center">
-                      <Phone className="h-5 w-5 text-green-600" />
-                    </div>
-                  </div>
-                  <div className="ml-4">
-                    <h3 className="text-sm font-medium text-gray-900">Phone</h3>
-                    <a href="tel:+18445436666" className="text-sm text-gray-600 hover:text-green-500">
-                      +1 (844) 543-6666
-                    </a>
-                  </div>
-                </div>
-                
-                <div className="flex items-start">
-                  <div className="flex-shrink-0">
-                    <div className="w-10 h-10 rounded-full bg-green-100 flex items-center justify-center">
                       <MapPin className="h-5 w-5 text-green-600" />
                     </div>
                   </div>
