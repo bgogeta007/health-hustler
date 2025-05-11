@@ -218,7 +218,7 @@ const exercisesData: { [key: number]: Exercise } = {
     duration: '30 min',
     intensity: 'Low',
     category: 'Strength',
-    videoId: '7HuB_zjjB3o',
+    videoId: 'GJ35av5X-eo',
     benefits: [
       'Joint-friendly exercises',
       'Full body muscle engagement',
