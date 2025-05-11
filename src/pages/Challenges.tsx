@@ -133,7 +133,7 @@ const Challenges: React.FC = () => {
           .from('user_rewards')
           .insert({ user_id: user.id, points: 0, badges: [] })
           .select()
-          .single();
+          .maybeSingle();
 
         if (insertError) throw insertError;
         setUserRewards(newRewards);
@@ -230,7 +230,7 @@ const Challenges: React.FC = () => {
           .from('user_rewards')
           .select('points, badges')
           .eq('user_id', user?.id)
-          .single();
+          .maybeSingle();
 
         if (currentRewards) {
           const { error: rewardError } = await supabase
