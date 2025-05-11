@@ -160,7 +160,7 @@ const About: React.FC = () => {
                 role: "Wellness Psychologist",
                 bio: "Specializes in the psychology of habit formation and sustainable behavioral change for long-term health.",
                 image:
-                  "https://images.squarespace-cdn.com/content/v1/632d9ebb021c85460fb1e095/9a3d37f8-e139-484d-958c-b7f44b648dc7/Clodagh+Closeup+3.jpg?format=2500w",
+                  "https://focus.independent.ie/thumbor/cnVJPGAq9eaHZpLNshCnv-g3uF0=/0x186:2156x1625/960x640/prod-mh-ireland/8107b285-7f85-47ad-a734-9b42b2181ea9/5ce08d72-535f-468c-b29f-d87e4ca489f8/IW%20Dr%20Clodagh.jpg",
               },
             ].map((member, index) => (
               <motion.div
