@@ -32,7 +32,7 @@ const UsersTab: React.FC = () => {
         .from("admin_users")
         .select("*")
         .eq("id", user?.id)
-        .single();
+        .maybeSingle();
 
       const isAdmin = !!adminCheck;
 
