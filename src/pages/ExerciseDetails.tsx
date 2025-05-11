@@ -180,7 +180,7 @@ const exercisesData: { [key: number]: Exercise } = {
     duration: '25 min',
     intensity: 'Medium',
     category: 'Strength',
-    videoId: '2pLT-olgUJs',
+    videoId: '8PwoytUU06g',
     benefits: [
       'Strengthens core muscles',
       'Improves posture',
