@@ -67,6 +67,60 @@ const exercises: Exercise[] = [
     duration: '30 min',
     intensity: 'Low',
     category: 'Strength'
+  },
+  7: {
+    id: 7,
+    title: 'Pilates for Core Strength',
+    description: 'Focus on core strength and flexibility with controlled, precise movements.',
+    image: 'https://images.pexels.com/photos/4662438/pexels-photo-4662438.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+    duration: '35 min',
+    intensity: 'Medium',
+    category: 'Flexibility'
+  },
+  8: {
+    id: 8,
+    title: 'Bodyweight Circuit Training',
+    description: 'Effective full-body workout using only your body weight for resistance.',
+    image: 'https://images.pexels.com/photos/4162485/pexels-photo-4162485.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+    duration: '30 min',
+    intensity: 'High',
+    category: 'Strength'
+  },
+  9: {
+    id: 9,
+    title: 'Power Walking Routine',
+    description: 'Brisk walking workout with intervals to boost calorie burn and endurance.',
+    image: 'https://images.pexels.com/photos/4720236/pexels-photo-4720236.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+    duration: '40 min',
+    intensity: 'Low',
+    category: 'Cardio'
+  },
+  10: {
+    id: 10,
+    title: 'Resistance Band Workout',
+    description: 'Full-body strength training using resistance bands for progressive overload.',
+    image: 'https://images.pexels.com/photos/6453396/pexels-photo-6453396.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+    duration: '35 min',
+    intensity: 'Medium',
+    category: 'Strength'
+  },
+  11: {
+    id: 11,
+    title: 'Dynamic Stretching Routine',
+    description: 'Improve flexibility and mobility with dynamic stretching exercises.',
+    image: 'https://images.pexels.com/photos/4662344/pexels-photo-4662344.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+    duration: '25 min',
+    intensity: 'Low',
+    category: 'Flexibility'
+  },
+  12: {
+    id: 12,
+    title: 'Tabata Training',
+    description: 'High-intensity interval training with 20 seconds work and 10 seconds rest.',
+    image: 'https://images.pexels.com/photos/6456301/pexels-photo-6456301.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+    duration: '20 min',
+    intensity: 'High',
+    category: 'Cardio'
   }
 ];
 
