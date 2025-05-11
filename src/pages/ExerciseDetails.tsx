@@ -104,7 +104,7 @@ const exercisesData: { [key: number]: Exercise } = {
     duration: '40 min',
     intensity: 'Low',
     category: 'Flexibility',
-    videoId: 'aAVOKQheBkk',
+    videoId: '7HXD24WkWhs',
     benefits: [
       'Improves flexibility and balance',
       'Reduces stress and anxiety',
