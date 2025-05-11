@@ -147,7 +147,7 @@ const About: React.FC = () => {
                 role: "Nutrition Specialist",
                 bio: "With over 10 years of experience in clinical nutrition, Dr. Chen helps develop our personalized diet plans.",
                 image:
-                  "https://www.livewholier.com/cdn/shop/articles/Amy_Shapiro_Street-4-Claudine_Williams-square.png?v=1664163290",
+                  "https://media.licdn.com/dms/image/C4E03AQF0XX3BfwZ-_w/profile-displayphoto-shrink_200_200/0/1649435084780?e=2147483647&v=beta&t=--xiKIrSGugaTljoKtXryv38UWmhPIxJHgrbXC6WceU",
               },
               {
                 name: "Jesse K.",
