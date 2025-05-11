@@ -370,7 +370,7 @@ const exercisesData: { [key: number]: Exercise } = {
     duration: '35 min',
     intensity: 'Medium',
     category: 'Strength',
-    videoId: 'FUwOJ4JyxYM',
+    videoId: '2_egnNlrDj0',
     benefits: [
       'Portable equipment',
       'Adaptable resistance',
