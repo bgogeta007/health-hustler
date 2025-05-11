@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ArrowRight, Check, Info, ChevronLeft, ChevronRight } from 'lucide-react';
+import { ArrowRight, Check, Info, ChevronLeft, ChevronRight, LogIn } from 'lucide-react';
 import OGAdsLocker from '../components/OGAdsLocker';
 import { useOGAdsStore } from '../store/ogAdsStore';
+import { useAuth } from '../contexts/AuthContext';
+import AuthModal from '../components/auth/AuthModal';
 
 interface Question {
   id: number;
@@ -157,8 +159,10 @@ const Quiz: React.FC = () => {
   const [errors, setErrors] = useState<{ [key: number]: string }>({});
   const [completed, setCompleted] = useState(false);
   const [showLocker, setShowLocker] = useState(false);
+  const [showAuthModal, setShowAuthModal] = useState(false);
   const navigate = useNavigate();
   const { isLocked, setLocked } = useOGAdsStore();
+  const { user } = useAuth();
 
   const currentQuestion = questions[currentQuestionIndex];
   const progress = ((currentQuestionIndex) / questions.length) * 100;
@@ -203,6 +207,11 @@ const Quiz: React.FC = () => {
   };
 
   const handleNext = () => {
+    if (!user) {
+      setShowAuthModal(true);
+      return;
+    }
+
     const error = validateAnswer(currentQuestion.id, answers[currentQuestion.id] || '');
     if (error) {
       setErrors(prev => ({ ...prev, [currentQuestion.id]: error }));
@@ -382,6 +391,45 @@ const Quiz: React.FC = () => {
       </motion.div>
     );
   };
+
+  if (!user) {
+    return (
+      <div className="min-h-screen pt-24 pb-16 bg-gradient-to-br from-green-50 to-blue-50 dark:from-gray-900 dark:to-gray-800">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-3xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              className="bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-8 text-center"
+            >
+              <LogIn className="h-16 w-16 text-green-500 mx-auto mb-6" />
+              <h2 className="text-2xl font-bold text-gray-800 dark:text-white mb-4">
+                Sign In to Take the Quiz
+              </h2>
+              <p className="text-gray-600 dark:text-gray-300 mb-8">
+                To get your personalized diet and exercise plan, please sign in or create an account. It's completely free!
+              </p>
+              <button
+                onClick={() => setShowAuthModal(true)}
+                className="px-6 py-3 bg-green-500 text-white font-semibold rounded-full hover:bg-green-600 transition-colors inline-flex items-center"
+              >
+                Sign In to Continue
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </button>
+            </motion.div>
+          </div>
+        </div>
+        <AnimatePresence>
+          {showAuthModal && (
+            <AuthModal
+              isOpen={showAuthModal}
+              onClose={() => setShowAuthModal(false)}
+            />
+          )}
+        </AnimatePresence>
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen pt-24 pb-16 bg-gradient-to-br from-green-50 to-blue-50 dark:from-gray-900 dark:to-gray-800">

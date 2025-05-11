@@ -41,14 +41,7 @@ function App() {
 
               <Route path="/" element={<Layout />}>
                 <Route index element={<Home />} />
-                <Route
-                  path="quiz"
-                  element={
-                    <ProtectedRoute>
-                      <Quiz />
-                    </ProtectedRoute>
-                  }
-                />
+                <Route path="quiz" element={<Quiz />} />
                 <Route path="diet-plans" element={<DietPlans />} />
                 <Route path="diet-plans/:id" element={<DietPlanDetails />} />
                 <Route path="weight-loss" element={<WeightLoss />} />
