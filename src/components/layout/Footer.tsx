@@ -106,18 +106,10 @@ const Footer: React.FC = () => {
               </li>
               <li>
                 <a
-                  href="#"
+                  href="/faq"
                   className="text-gray-300 hover:text-green-400 transition-colors"
                 >
-                  Privacy Policy
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  className="text-gray-300 hover:text-green-400 transition-colors"
-                >
-                  Terms of Service
+                  FAQ
                 </a>
               </li>
             </ul>
