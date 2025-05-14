@@ -115,35 +115,35 @@ const UsersTab: React.FC = () => {
   };
 
   return (
-    <div className="space-y-6">
-      <div className="flex justify-between items-center">
+    <div className="space-y-6 px-4 sm:px-6 lg:px-8">
+      <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
         <h2 className="text-2xl font-bold dark:text-white">User Management</h2>
-        <div className="relative">
+        <div className="relative w-full sm:w-auto">
           <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
           <input
             type="text"
             placeholder="Search users..."
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
-            className="pl-10 pr-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
+            className="w-full sm:w-64 pl-10 pr-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
           />
         </div>
       </div>
-
-      <div className="bg-white dark:bg-gray-800 rounded-xl shadow-md overflow-hidden">
-        <table className="w-full">
+  
+      <div className="bg-white dark:bg-gray-800 rounded-xl shadow-md overflow-x-auto">
+        <table className="w-full min-w-[640px]">
           <thead className="bg-gray-50 dark:bg-gray-700">
             <tr>
-              <th className="px-6 py-3 text-left text-sm font-medium dark:text-white">
+              <th className="px-4 sm:px-6 py-3 text-left text-sm font-medium dark:text-white">
                 User
               </th>
-              <th className="px-6 py-3 text-left text-sm font-medium dark:text-white">
+              <th className="px-4 sm:px-6 py-3 text-left text-sm font-medium dark:text-white">
                 Status
               </th>
-              <th className="px-6 py-3 text-left text-sm font-medium dark:text-white">
+              <th className="px-4 sm:px-6 py-3 text-left text-sm font-medium dark:text-white">
                 Created
               </th>
-              <th className="px-6 py-3 text-left text-sm font-medium dark:text-white">
+              <th className="px-4 sm:px-6 py-3 text-left text-sm font-medium dark:text-white">
                 Actions
               </th>
             </tr>
@@ -151,25 +151,20 @@ const UsersTab: React.FC = () => {
           <tbody className="divide-y divide-gray-200 dark:divide-gray-700">
             {filteredUsers.map((user) => (
               <tr key={user.id}>
-                <td className="px-6 py-4">
+                <td className="px-4 sm:px-6 py-4">
                   <div className="flex items-center gap-3">
-                    <div className="h-9 w-9 rounded-full bg-green-500 flex items-center justify-center text-white">
-                      {user.username?.[0]?.toUpperCase() ||
-                        user.email[0].toUpperCase()}
+                    <div className="h-9 w-9 rounded-full bg-green-500 flex items-center justify-center text-white shrink-0">
+                      {user.username?.[0]?.toUpperCase() || user.email[0].toUpperCase()}
                     </div>
-                    <div>
-                      <p className="font-medium dark:text-white">
-                        {user.full_name}
-                      </p>
-                      <p className="text-sm text-gray-500 dark:text-gray-300">
-                        {user.email}
-                      </p>
+                    <div className="min-w-0">
+                      <p className="font-medium dark:text-white truncate">{user.full_name}</p>
+                      <p className="text-sm text-gray-500 dark:text-gray-300 truncate">{user.email}</p>
                     </div>
                   </div>
                 </td>
-                <td className="px-6 py-4">
+                <td className="px-4 sm:px-6 py-4">
                   <span
-                    className={`px-2 py-1 rounded-full text-sm font-medium ${
+                    className={`px-2 py-1 rounded-full text-sm font-medium whitespace-nowrap ${
                       user.is_admin
                         ? "bg-purple-100 text-purple-800 dark:bg-purple-900/20 dark:text-purple-300"
                         : "bg-green-100 text-green-800 dark:bg-green-900/20 dark:text-green-300"
@@ -178,10 +173,10 @@ const UsersTab: React.FC = () => {
                     {user.is_admin ? "Admin" : "User"}
                   </span>
                 </td>
-                <td className="px-6 py-4 text-sm dark:text-white">
+                <td className="px-4 sm:px-6 py-4 text-sm dark:text-white whitespace-nowrap">
                   {new Date(user.created_at).toLocaleDateString()}
                 </td>
-                <td className="px-6 py-4">
+                <td className="px-4 sm:px-6 py-4">
                   <button
                     onClick={() => handleEditUser(user)}
                     className="p-2 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg"
@@ -194,7 +189,7 @@ const UsersTab: React.FC = () => {
           </tbody>
         </table>
       </div>
-
+  
       {showForm && selectedUser && (
         <UserForm
           user={selectedUser}
