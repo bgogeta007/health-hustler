@@ -203,7 +203,7 @@ const Contact: React.FC = () => {
                         name="name"
                         value={formData.name}
                         onChange={handleChange}
-                        className={`w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent outline-none transition-colors ${
+                        className={`w-full px-4 py-2 border rounded-lg dark:bg-gray-900 focus:ring-2 focus:ring-green-500 focus:border-transparent outline-none transition-colors ${
                           errors.name ? 'border-red-300' : 'border-gray-300'
                         }`}
                         placeholder="Your name"
