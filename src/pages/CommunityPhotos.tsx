@@ -82,6 +82,21 @@ const CommunityPhotos: React.FC = () => {
     }
   }, [photos]);
 
+  const getSignedUrl = async (filePath: string) => {
+      try {
+        const { data, error } = await supabase.storage
+          .from('progress-photos')
+          .createSignedUrl(filePath, 3600); // 1 hour
+    
+        if (error) throw error;
+        return data.signedUrl;
+      } catch (error) {
+        console.error('Error generating signed URL:', error);
+        return null;
+      }
+    };
+
+
   const fetchPhotos = async () => {
     try {
       if (!user) return;
@@ -105,9 +120,19 @@ const CommunityPhotos: React.FC = () => {
 
       if (photosError) throw photosError;
 
+      // Regenerate signed URLs
+      const photosWithSignedUrls = await Promise.all(
+        photosData.map(async (photo) => {
+          const urlParts = photo.photo_url.split('/');
+          const filePath = `${photo.user_id}/${photo.week_number}/${urlParts[urlParts.length - 1]}`;
+          const signedUrl = await getSignedUrl(filePath);
+          return { ...photo, photo_url: signedUrl || photo.photo_url };
+        })
+      );
+
       // Get likes for each photo
       const photosWithLikes = await Promise.all(
-        photosData.map(async (photo) => {
+        photosWithSignedUrls.map(async (photo) => {
           const { count: likesCount } = await supabase
             .from("photo_likes")
             .select("id", { count: "exact" })
