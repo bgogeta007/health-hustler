@@ -128,14 +128,22 @@ const CommunityPhotos: React.FC = () => {
       if (photosError) throw photosError;
 
       // Regenerate signed URLs
+      // const photosWithSignedUrls = await Promise.all(
+      //   photosData.map(async (photo) => {
+      //     const urlParts = photo.photo_url.split('/');
+      //     const filePath = `${photo.user_id}/${photo.week_number}/${urlParts[urlParts.length - 1]}`;
+      //     const signedUrl = await getSignedUrl(filePath);
+      //     return { ...photo, photo_url: signedUrl || photo.photo_url };
+      //   })
+      // );
+
       const photosWithSignedUrls = await Promise.all(
         photosData.map(async (photo) => {
-          const urlParts = photo.photo_url.split('/');
-          const filePath = `${photo.user_id}/${photo.week_number}/${urlParts[urlParts.length - 1]}`;
-          const signedUrl = await getSignedUrl(filePath);
+          const signedUrl = await getSignedUrl(photo.photo_url);
           return { ...photo, photo_url: signedUrl || photo.photo_url };
         })
       );
+
 
       // Get likes for each photo
       const photosWithLikes = await Promise.all(
