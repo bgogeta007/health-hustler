@@ -24,9 +24,11 @@ const OverviewTab: React.FC = () => {
 
   const fetchDashboardStats = async () => {
     try {
-      const { count: totalParticipants } = await supabase
+      const { count: totalParticipants, error } = await supabase
         .from('challenge_participants')
-        .select('*', { count: 'exact' });
+        .select('user_id', { count: 'exact', head: true })
+        .neq('user_id', null)
+        .distinct();
 
       const sevenDaysAgo = new Date();
       sevenDaysAgo.setDate(sevenDaysAgo.getDate() - 7);
