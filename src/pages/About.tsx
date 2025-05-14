@@ -164,7 +164,7 @@ const About: React.FC = () => {
             ].map((member, index) => (
               <motion.div
                 key={index}
-                className="bg-white rounded-xl shadow-sm overflow-hidden"
+                className="bg-white dark:bg-gray-800 rounded-xl shadow-sm overflow-hidden"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
