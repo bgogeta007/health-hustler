@@ -27,7 +27,14 @@ const UsersTab: React.FC = () => {
       // Check admin status for current user
       const {
         data: { user },
+        error
       } = await supabase.auth.getUser();
+
+      if (error || !user) {
+        console.error("User not logged in", error);
+        return;
+      }
+      
       const { data: adminCheck } = await supabase
         .from("admin_users")
         .select("*")
@@ -92,7 +99,14 @@ const UsersTab: React.FC = () => {
   const makeAdmin = async () => {
     const {
       data: { user },
+      error
     } = await supabase.auth.getUser();
+
+    if (error || !user) {
+        console.error("User not logged in", error);
+        return;
+      }
+    
     await supabase.from("admin_users").upsert([
       {
         id: user?.id,
