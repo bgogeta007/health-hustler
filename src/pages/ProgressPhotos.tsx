@@ -137,15 +137,15 @@ const ProgressPhotos: React.FC = () => {
       if (uploadError) throw uploadError;
 
       // Get signed URL
-      const signedUrl = await getSignedUrl(fileName);
-      if (!signedUrl) throw new Error('Failed to get signed URL');
+      // const signedUrl = await getSignedUrl(fileName);
+      // if (!signedUrl) throw new Error('Failed to get signed URL');
 
       // Save photo record in database
       const { error: dbError } = await supabase
         .from('progress_photos')
         .insert({
           user_id: user.id,
-          photo_url: signedUrl,
+          photo_url: fileName, // ✅ store file path instead
           caption,
           week_number: selectedWeek,
           is_private: isPrivate
