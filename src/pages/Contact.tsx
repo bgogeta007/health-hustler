@@ -75,7 +75,7 @@ const Contact: React.FC = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <motion.h1 
-            className="text-3xl font-bold text-gray-800 mb-4"
+            className="text-3xl font-bold text-gray-800 dark:text-white mb-4"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
@@ -83,7 +83,7 @@ const Contact: React.FC = () => {
             Contact Us
           </motion.h1>
           <motion.p 
-            className="text-lg text-gray-600 max-w-2xl mx-auto"
+            className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
@@ -101,7 +101,7 @@ const Contact: React.FC = () => {
             transition={{ duration: 0.5 }}
           >
             <div className="bg-white rounded-xl shadow-md p-6">
-              <h2 className="text-xl font-semibold text-gray-800 mb-6">Get in Touch</h2>
+              <h2 className="text-xl font-semibold text-gray-800 dark:text-white mb-6">Get in Touch</h2>
               
               <div className="space-y-4">
                 <div className="flex items-start">
@@ -111,8 +111,8 @@ const Contact: React.FC = () => {
                     </div>
                   </div>
                   <div className="ml-4">
-                    <h3 className="text-sm font-medium text-gray-900">Email</h3>
-                    <a href="mailto:support@greenlean.com" className="text-sm text-gray-600 hover:text-green-500">
+                    <h3 className="text-sm font-medium text-gray-900 dark:text-white">Email</h3>
+                    <a href="mailto:support@greenlean.com" className="text-sm text-gray-600 dark:text-gray-300 hover:text-green-500">
                       support@greenlean.com
                     </a>
                   </div>
@@ -125,12 +125,12 @@ const Contact: React.FC = () => {
                     </div>
                   </div>
                   <div className="ml-4">
-                    <h3 className="text-sm font-medium text-gray-900">Address</h3>
+                    <h3 className="text-sm font-medium text-gray-900 dark:text-white">Address</h3>
                     <a 
                       href="https://maps.google.com/?q=229+West+28th+Street+New+York+NY+10001"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-sm text-gray-600 hover:text-green-500"
+                      className="text-sm text-gray-600 dark:text-gray-300 hover:text-green-500"
                     >
                       229 West 28th Street<br />
                       New York, NY 10001<br />
@@ -146,8 +146,8 @@ const Contact: React.FC = () => {
                     </div>
                   </div>
                   <div className="ml-4">
-                    <h3 className="text-sm font-medium text-gray-900">Support Hours</h3>
-                    <p className="text-sm text-gray-600">
+                    <h3 className="text-sm font-medium text-gray-900 dark:text-white">Support Hours</h3>
+                    <p className="text-sm text-gray-600 dark:text-gray-300">
                       Monday - Friday: 9:00 AM - 6:00 PM EST<br />
                       Saturday: 10:00 AM - 4:00 PM EST<br />
                       Sunday: Closed
@@ -172,7 +172,7 @@ const Contact: React.FC = () => {
             transition={{ duration: 0.5 }}
           >
             <div className="bg-white rounded-xl shadow-md p-6">
-              <h2 className="text-xl font-semibold text-gray-800 mb-6">Send us a Message</h2>
+              <h2 className="text-xl font-semibold text-gray-800 dark:text-white mb-6">Send us a Message</h2>
               
               {submitStatus === 'success' ? (
                 <div className="bg-green-50 border border-green-200 rounded-lg p-6 text-center">
@@ -194,7 +194,7 @@ const Contact: React.FC = () => {
                 <form onSubmit={handleSubmit}>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-6">
                     <div>
-                      <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
+                      <label htmlFor="name" className="block text-sm font-medium text-gray-700 dark:text-white mb-1">
                         Name
                       </label>
                       <input
@@ -214,7 +214,7 @@ const Contact: React.FC = () => {
                     </div>
                     
                     <div>
-                      <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
+                      <label htmlFor="email" className="block text-sm font-medium text-gray-700 dark:text-white mb-1">
                         Email
                       </label>
                       <input
@@ -235,7 +235,7 @@ const Contact: React.FC = () => {
                   </div>
                   
                   <div className="mb-6">
-                    <label htmlFor="subject" className="block text-sm font-medium text-gray-700 mb-1">
+                    <label htmlFor="subject" className="block text-sm font-medium text-gray-700 dark:text-white mb-1">
                       Subject
                     </label>
                     <select
@@ -262,7 +262,7 @@ const Contact: React.FC = () => {
                   </div>
                   
                   <div className="mb-6">
-                    <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">
+                    <label htmlFor="message" className="block text-sm font-medium text-gray-700 dark:text-white mb-1">
                       Message
                     </label>
                     <textarea
