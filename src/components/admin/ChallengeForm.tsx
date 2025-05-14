@@ -33,6 +33,7 @@ const ChallengeForm: React.FC<ChallengeFormProps> = ({
 }) => {
   const [requirementsJson, setRequirementsJson] = useState("");
   const [jsonError, setJsonError] = useState<string | null>(null);
+  const today = new Date().toISOString().split("T")[0];
   const [formData, setFormData] = useState<Partial<Challenge>>({
     title: "",
     description: "",
@@ -42,8 +43,8 @@ const ChallengeForm: React.FC<ChallengeFormProps> = ({
     requirements: {
       target: 0,
     },
-    start_date: new Date().toISOString().split("T")[0],
-    end_date: new Date().toISOString().split("T")[0],
+    start_date: today,
+    end_date: today,
     is_active: true,
   });
 
@@ -111,7 +112,7 @@ const ChallengeForm: React.FC<ChallengeFormProps> = ({
   };
 
   return (
-    <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+    <div role="dialog" aria-modal="true" aria-labelledby="challenge-form-title" className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
       <div className="bg-white dark:bg-gray-800 rounded-xl shadow-xl p-6 w-full max-w-2xl max-h-[90vh] overflow-y-auto">
         <div className="flex justify-between items-center mb-6">
           <h2 className="text-2xl font-bold dark:text-white">
