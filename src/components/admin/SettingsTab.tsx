@@ -213,7 +213,7 @@ const SettingsTab: React.FC = () => {
       )}
 
       {/* Navigation */}
-      <div className="flex space-x-4 border-b border-gray-200 dark:border-gray-700">
+      <div className="flex space-x-4 border-b border-gray-200 dark:border-gray-700 overflow-x-auto">
         {[
           { id: "customization", label: "Customization", icon: Settings },
           { id: "security", label: "Security", icon: Shield },
