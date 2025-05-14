@@ -170,45 +170,56 @@ const Profile: React.FC = () => {
                     Profile Picture
                   </label>
                   <div className="flex items-center space-x-6">
-                    <div className="relative">
-                      <button
-                        type="button"
-                        onClick={handleAvatarClick}
-                        className="w-24 h-24 rounded-full bg-gray-200 dark:bg-gray-700 flex items-center justify-center overflow-hidden relative group cursor-pointer"
-                      >
-                        {avatarUrl ? (
-                          <img 
-                            src={avatarUrl} 
-                            alt="Profile" 
-                            className="w-full h-full object-cover"
-                          />
-                        ) : (
-                          <User className="w-12 h-12 text-gray-400" />
-                        )}
-                        <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-                          {uploadingAvatar ? (
-                            <Loader className="h-6 w-6 animate-spin text-white" />
-                          ) : (
-                            <Camera className="h-6 w-6 text-white" />
-                          )}
-                        </div>
-                      </button>
-                      <input
-                        ref={fileInputRef}
-                        type="file"
-                        accept="image/*"
-                        onChange={handleAvatarChange}
-                        className="hidden"
-                      />
-                    </div>
-                    <div className="flex-1">
-                      <p className="text-sm text-gray-500 dark:text-gray-400">
-                        Click to upload a new profile picture.<br />
-                        Recommended: Square image, at least 400x400 pixels.<br />
-                        Maximum size: 5MB
-                      </p>
-                    </div>
-                  </div>
+  <div className="relative">
+    <button
+      type="button"
+      onClick={handleAvatarClick}
+      className="w-24 h-24 rounded-full bg-gray-200 dark:bg-gray-700 flex items-center justify-center overflow-hidden relative group cursor-pointer"
+    >
+      {avatarUrl ? (
+        <img 
+          src={avatarUrl} 
+          alt="Profile" 
+          className="w-full h-full object-cover"
+        />
+      ) : (
+        <User className="w-12 h-12 text-gray-400" />
+      )}
+      <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+        {uploadingAvatar ? (
+          <Loader className="h-6 w-6 animate-spin text-white" />
+        ) : (
+          <Camera className="h-6 w-6 text-white" />
+        )}
+      </div>
+    </button>
+    <input
+      ref={fileInputRef}
+      type="file"
+      accept="image/*"
+      onChange={handleAvatarChange}
+      className="hidden"
+    />
+  </div>
+
+  <div className="flex-1 space-y-2">
+    <p className="text-sm text-gray-500 dark:text-gray-400">
+      Click to upload a new profile picture.<br />
+      Recommended: Square image, at least 400x400 pixels.<br />
+      Maximum size: 5MB
+    </p>
+    {avatarUrl && (
+      <button
+        type="button"
+        onClick={handleDeleteAvatar}
+        className="text-sm text-red-500 hover:underline"
+      >
+        Delete profile picture
+      </button>
+    )}
+  </div>
+</div>
+
                 </div>
 
                 <div>
