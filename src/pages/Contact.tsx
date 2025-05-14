@@ -100,7 +100,7 @@ const Contact: React.FC = () => {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5 }}
           >
-            <div className="bg-white dark:bg-gray-900 rounded-xl shadow-md p-6">
+            <div className="bg-white dark:bg-gray-800 rounded-xl shadow-md p-6">
               <h2 className="text-xl font-semibold text-gray-800 dark:text-white mb-6">Get in Touch</h2>
               
               <div className="space-y-4">
@@ -171,7 +171,7 @@ const Contact: React.FC = () => {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5 }}
           >
-            <div className="bg-white dark:bg-gray-900 rounded-xl shadow-md p-6">
+            <div className="bg-white dark:bg-gray-800 rounded-xl shadow-md p-6">
               <h2 className="text-xl font-semibold text-gray-800 dark:text-white mb-6">Send us a Message</h2>
               
               {submitStatus === 'success' ? (
