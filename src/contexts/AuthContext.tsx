@@ -98,7 +98,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
 
   const signOut = async () => {
     try {
-      await supabase.auth.signOut({ scope: 'global' });
+      await supabase.auth.signOut();
     } catch (err: any) {
       if (err?.message !== 'Session from session_id claim in JWT does not exist') {
         console.error('Logout error:', err);
