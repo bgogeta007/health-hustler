@@ -59,12 +59,11 @@ const ProgressPhotos: React.FC = () => {
     try {
       const updatedPhotos = await Promise.all(
         photos.map(async (photo) => {
-          const urlParts = photo.photo_url.split('/');
-          const filePath = `${user?.id}/${photo.week_number}/${urlParts[urlParts.length - 1]}`;
-          const signedUrl = await getSignedUrl(filePath);
+          const signedUrl = await getSignedUrl(photo.photo_url);
           return { ...photo, photo_url: signedUrl || photo.photo_url };
         })
       );
+
       setPhotos(updatedPhotos);
     } catch (error) {
       console.error('Error refreshing signed URLs:', error);
