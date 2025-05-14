@@ -573,10 +573,10 @@ const CommunityPhotos: React.FC = () => {
                   <div className="p-2 flex items-center justify-between border-b border-gray-100 dark:border-gray-700">
                     <div className="flex items-center space-x-3">
                       <div className="w-8 h-8 rounded-full bg-gray-200 dark:bg-gray-700 overflow-hidden">
-                        {photo.user.avatar_url ? (
+                        {photo.user?.avatar_url ? (
                           <img
-                            src={photo.user.avatar_url}
-                            alt={photo.user.username}
+                            src={photo.user?.avatar_url}
+                            alt={photo.user?.username}
                             className="w-full h-full object-cover"
                           />
                         ) : (
