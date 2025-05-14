@@ -392,7 +392,7 @@ const Challenges: React.FC = () => {
                       <h3 className="text-lg font-semibold text-gray-800 dark:text-white">
                         {challenge.title}
                       </h3>
-                      <span className={`text-sm font-medium px-2 py-1 rounded-full capitalize ${getDifficultyColor(challenge.difficulty)}`}>
+                      <span className={`text-sm font-medium px-3 py-0.5 rounded-full capitalize ${getDifficultyColor(challenge.difficulty)}`}>
                         {challenge.difficulty}
                       </span>
                     </div>
