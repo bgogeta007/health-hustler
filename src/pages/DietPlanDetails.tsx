@@ -1416,7 +1416,7 @@ const DietPlanDetails: React.FC = () => {
                         ))}
                       </div>
                       <div className="mt-4 pt-4 border-t border-gray-200 dark:border-gray-600">
-                        <div className="text-sm">
+                        <div className="flex items-center text-sm">
                           <div>
                             <span className="text-gray-500 dark:text-gray-400">Total:</span>
                             <span className="font-medium text-gray-800 dark:text-white ml-2">{totals.calories} cal</span>
