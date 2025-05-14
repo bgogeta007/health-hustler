@@ -84,6 +84,8 @@ const CommunityPhotos: React.FC = () => {
 
   const getSignedUrl = async (filePath: string) => {
       try {
+        console.log("Creating signed URL for:", filePath);
+
         const { data, error } = await supabase.storage
           .from('progress-photos')
           .createSignedUrl(filePath, 3600); // 1 hour
@@ -243,7 +245,8 @@ const CommunityPhotos: React.FC = () => {
         })
       );
 
-      setPhotos(photosWithLikes);
+      const filteredPhotos = photosWithLikes.filter((photo) => photo.user);
+      setPhotos(filteredPhotos);
     } catch (error) {
       console.error("Error fetching photos:", error);
     } finally {
