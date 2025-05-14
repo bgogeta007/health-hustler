@@ -86,6 +86,11 @@ const CommunityPhotos: React.FC = () => {
       try {
         console.log("Creating signed URL for:", filePath);
 
+        if (!filePath) {
+          console.warn('Skipping photo with invalid filePath:', photo);
+          return photo;
+        }
+
         const { data, error } = await supabase.storage
           .from('progress-photos')
           .createSignedUrl(filePath, 3600); // 1 hour
