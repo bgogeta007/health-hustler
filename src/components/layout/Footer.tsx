@@ -37,7 +37,7 @@ const Footer: React.FC = () => {
                 <Instagram size={20} />
               </a>
               <a
-                href="#"
+                href="mailto:support@greenlean.com"
                 className="text-gray-700 dark:text-gray-300 hover:text-green-400 transition-colors"
               >
                 <Mail size={20} />
