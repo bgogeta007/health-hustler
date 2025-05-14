@@ -97,8 +97,13 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
   };
 
   const signOut = async () => {
-    const { error } = await supabase.auth.signOut();
-    if (error) throw error;
+    try {
+      await supabase.auth.signOut();
+    } catch (err: any) {
+      if (err?.message !== 'Session from session_id claim in JWT does not exist') {
+        console.error('Logout error:', err);
+      }
+    }
   };
 
   const resetPassword = async (email: string) => {
