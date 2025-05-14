@@ -579,7 +579,7 @@ const CommunityPhotos: React.FC = () => {
                             alt={photo.user?.username}
                             className="w-full h-full object-cover"
                           />
-                        ) : (
+                        ) : (d
                           <div className="w-full h-full flex items-center justify-center text-gray-500 dark:text-gray-400">
                             <Users className="h-6 w-6" />
                           </div>
