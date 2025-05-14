@@ -156,7 +156,7 @@ const Contact: React.FC = () => {
                 </div>
               </div>
 
-              <div className="mt-8 p-4 bg-green-100/80 rounded-lg border border-green-100">
+              <div className="mt-8 p-4 bg-green-100/60 rounded-lg border border-green-100">
                 <p className="text-sm text-green-800">
                   For immediate assistance, please check our <Link to="/faq" className="text-green-600 font-medium hover:text-green-700">FAQ page</Link> or send us an email.
                 </p>
