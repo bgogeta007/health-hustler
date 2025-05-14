@@ -115,7 +115,7 @@ const UsersTab: React.FC = () => {
   };
 
   return (
-    <div className="space-y-6 px-4 sm:px-6 lg:px-8">
+    <div className="space-y-6">
       <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
         <h2 className="text-2xl font-bold dark:text-white">User Management</h2>
         <div className="relative w-full sm:w-auto">
