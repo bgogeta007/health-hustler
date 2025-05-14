@@ -113,7 +113,7 @@ const ChallengeForm: React.FC<ChallengeFormProps> = ({
 
   return (
     <div role="dialog" aria-modal="true" aria-labelledby="challenge-form-title" className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
-      <div className="bg-white dark:bg-gray-800 rounded-xl shadow-xl p-6 w-full max-w-2xl max-h-[90vh] overflow-y-auto">
+      <div className="bg-white dark:bg-gray-800 rounded-xl shadow-xl p-4 w-full max-w-2xl max-h-[90vh] overflow-y-auto">
         <div className="flex justify-between items-center mb-6">
           <h2 className="text-2xl font-bold dark:text-white">
             {challenge ? "Edit Challenge" : "Create Challenge"}
