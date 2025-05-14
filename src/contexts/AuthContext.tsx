@@ -96,15 +96,22 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
     }
   };
 
-  const signOut = async () => {
-    try {
-      await supabase.auth.signOut();
-    } catch (err: any) {
-      if (err?.message !== 'Session from session_id claim in JWT does not exist') {
-        console.error('Logout error:', err);
+    const signOut = async () => {
+      try {
+        await supabase.auth.signOut();
+      } catch (err: any) {
+        if (
+          err?.message?.includes('Session from session_id') || 
+          err?.status === 403 || 
+          err?.code === 'session_not_found'
+        ) {
+          // Ignore this known case: session is already gone
+          console.warn('Session was already gone — safe to ignore');
+        } else {
+          console.error('Unexpected logout error:', err);
+        }
       }
-    }
-  };
+    };
 
   const resetPassword = async (email: string) => {
     const { error } = await supabase.auth.resetPasswordForEmail(email, {
