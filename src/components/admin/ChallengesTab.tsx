@@ -231,8 +231,8 @@ const ChallengesTab: React.FC = () => {
       </div>
 
       {/* Challenges Table */}
-      <div className="bg-white dark:bg-gray-800 rounded-xl shadow-md overflow-hidden">
-        <table className="w-full">
+      <div className="bg-white dark:bg-gray-800 rounded-xl shadow-md overflow-x-auto">
+        <table className="min-w-full table-auto">
           <thead className="bg-gray-50 dark:bg-gray-700">
             <tr>
               <th className="px-6 py-3 text-left text-sm font-medium dark:text-white">Challenge</th>
