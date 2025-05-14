@@ -1,34 +1,34 @@
-import React, { Suspense } from "react";
+import React, { Suspense, lazy } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
 import { AuthProvider } from "./contexts/AuthContext";
 import ProtectedRoute from "./components/auth/ProtectedRoute";
 import LoadingScreen from './components/common/LoadingScreen'
+import { PlatformProvider } from "./contexts/PlatformContext";
 
 // Layout
 import Layout from "./components/layout/Layout";
 
-// Pages
-import Home from "./pages/Home";
-import Quiz from "./pages/Quiz";
-import DietPlans from "./pages/DietPlans";
-import DietPlanDetails from "./pages/DietPlanDetails";
-import WeightLoss from "./pages/WeightLoss";
-import ExerciseDetails from "./pages/ExerciseDetails";
-import About from "./pages/About";
-import Contact from "./pages/Contact";
-import FAQ from "./pages/FAQ";
-import Profile from "./pages/Profile";
-import QuizHistory from "./pages/QuizHistory";
-import QuizResult from "./pages/QuizResult";
-import Dashboard from "./pages/Dashboard";
-import AuthCallback from "./pages/AuthCallback";
-import NotFound from "./pages/NotFound";
-import ProgressPhotos from "./pages/ProgressPhotos";
-import CommunityPhotos from "./pages/CommunityPhotos";
-import Challenges from "./pages/Challenges";
-import AdminDashboard from "./pages/AdminDashboard";
-import { PlatformProvider } from "./contexts/PlatformContext";
+// Lazy-Loaded Pages
+const Home = lazy(() => import('./pages/Home'));
+const Quiz = lazy(() => import('./pages/Quiz'));
+const DietPlans = lazy(() => import('./pages/DietPlans'));
+const DietPlanDetails = lazy(() => import('./pages/DietPlanDetails'));
+const WeightLoss = lazy(() => import('./pages/WeightLoss'));
+const ExerciseDetails = lazy(() => import('./pages/ExerciseDetails'));
+const About = lazy(() => import('./pages/About'));
+const Contact = lazy(() => import('./pages/Contact'));
+const FAQ = lazy(() => import('./pages/FAQ'));
+const Profile = lazy(() => import('./pages/Profile'));
+const QuizHistory = lazy(() => import('./pages/QuizHistory'));
+const QuizResult = lazy(() => import('./pages/QuizResult'));
+const Dashboard = lazy(() => import('./pages/Dashboard'));
+const AuthCallback = lazy(() => import('./pages/AuthCallback'));
+const NotFound = lazy(() => import('./pages/NotFound'));
+const ProgressPhotos = lazy(() => import('./pages/ProgressPhotos'));
+const CommunityPhotos = lazy(() => import('./pages/CommunityPhotos'));
+const Challenges = lazy(() => import('./pages/Challenges'));
+const AdminDashboard = lazy(() => import('./pages/AdminDashboard'));
 
 function App() {
   return (
