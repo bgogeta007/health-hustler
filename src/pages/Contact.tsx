@@ -203,7 +203,7 @@ const Contact: React.FC = () => {
                         name="name"
                         value={formData.name}
                         onChange={handleChange}
-                        className={`w-full px-4 py-2 border rounded-lg dark:bg-gray-900 focus:ring-2 focus:ring-green-500 focus:border-transparent outline-none transition-colors ${
+                        className={`w-full px-4 py-2 border rounded-lg dark:bg-gray-900 dark:border-gray-700 dark:text-white focus:ring-2 focus:ring-green-500 focus:border-transparent outline-none transition-colors ${
                           errors.name ? 'border-red-300' : 'border-gray-300'
                         }`}
                         placeholder="Your name"
@@ -223,7 +223,7 @@ const Contact: React.FC = () => {
                         name="email"
                         value={formData.email}
                         onChange={handleChange}
-                        className={`w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent outline-none transition-colors ${
+                        className={`w-full px-4 py-2 border rounded-lg dark:bg-gray-900 dark:border-gray-700 dark:text-white focus:ring-2 focus:ring-green-500 focus:border-transparent outline-none transition-colors ${
                           errors.email ? 'border-red-300' : 'border-gray-300'
                         }`}
                         placeholder="your.email@example.com"
@@ -243,7 +243,7 @@ const Contact: React.FC = () => {
                       name="subject"
                       value={formData.subject}
                       onChange={handleChange}
-                      className={`w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent outline-none transition-colors ${
+                      className={`w-full px-4 py-2 border rounded-lg dark:bg-gray-900 dark:border-gray-700 dark:text-white focus:ring-2 focus:ring-green-500 focus:border-transparent outline-none transition-colors ${
                         errors.subject ? 'border-red-300' : 'border-gray-300'
                       }`}
                     >
@@ -271,7 +271,7 @@ const Contact: React.FC = () => {
                       value={formData.message}
                       onChange={handleChange}
                       rows={6}
-                      className={`w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent outline-none transition-colors ${
+                      className={`w-full px-4 py-2 border rounded-lg dark:bg-gray-900 dark:border-gray-700 dark:text-white focus:ring-2 focus:ring-green-500 focus:border-transparent outline-none transition-colors ${
                         errors.message ? 'border-red-300' : 'border-gray-300'
                       }`}
                       placeholder="How can we help you?"
