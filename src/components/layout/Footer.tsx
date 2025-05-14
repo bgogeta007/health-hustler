@@ -13,7 +13,7 @@ const Footer: React.FC = () => {
               <Leaf size={32} className="text-green-400" />
               <span className="text-xl font-bold">GreenLean</span>
             </Link>
-            <p className="text-gray-700 dark:text-gray-700 dark:text-gray-300 mb-4">
+            <p className="text-gray-700 dark:text-gray-300 mb-4">
               Your companion on the journey to a healthier, happier you. Free
               personalized diet and weight loss plans.
             </p>
