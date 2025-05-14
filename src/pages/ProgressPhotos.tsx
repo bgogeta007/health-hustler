@@ -26,9 +26,19 @@ const ProgressPhotos: React.FC = () => {
   const [compareMode, setCompareMode] = useState(false);
   const [selectedPhotos, setSelectedPhotos] = useState<ProgressPhoto[]>([]);
   const [signedUrls, setSignedUrls] = useState<{ [key: string]: string }>({});
+  const urlRefreshInterval = useRef<NodeJS.Timeout>();
 
   useEffect(() => {
     fetchPhotos();
+
+    // Set up interval to refresh URLs every 45 minutes (before the 1-hour expiry)
+    urlRefreshInterval.current = setInterval(refreshSignedUrls, 45 * 60 * 1000);
+
+    return () => {
+      if (urlRefreshInterval.current) {
+        clearInterval(urlRefreshInterval.current);
+      }
+    };
   }, [user]);
 
   const getSignedUrl = async (filePath: string) => {
@@ -45,6 +55,22 @@ const ProgressPhotos: React.FC = () => {
     }
   };
 
+  const refreshSignedUrls = async () => {
+    try {
+      const updatedPhotos = await Promise.all(
+        photos.map(async (photo) => {
+          const urlParts = photo.photo_url.split('/');
+          const filePath = `${user?.id}/${photo.week_number}/${urlParts[urlParts.length - 1]}`;
+          const signedUrl = await getSignedUrl(filePath);
+          return { ...photo, photo_url: signedUrl || photo.photo_url };
+        })
+      );
+      setPhotos(updatedPhotos);
+    } catch (error) {
+      console.error('Error refreshing signed URLs:', error);
+    }
+  };
+
   const fetchPhotos = async () => {
     try {
       if (!user) return;
@@ -58,14 +84,15 @@ const ProgressPhotos: React.FC = () => {
       if (error) throw error;
 
       // Get signed URLs for all photos
-      const urlPromises = data?.map(async (photo) => {
-        const urlParts = photo.photo_url.split('/');
-        const filePath = `${user.id}/${photo.week_number}/${urlParts[urlParts.length - 1]}`;
-        const signedUrl = await getSignedUrl(filePath);
-        return { ...photo, photo_url: signedUrl || photo.photo_url };
-      }) || [];
+      const photosWithSignedUrls = await Promise.all(
+        data?.map(async (photo) => {
+          const urlParts = photo.photo_url.split('/');
+          const filePath = `${user.id}/${photo.week_number}/${urlParts[urlParts.length - 1]}`;
+          const signedUrl = await getSignedUrl(filePath);
+          return { ...photo, photo_url: signedUrl || photo.photo_url };
+        }) || []
+      );
 
-      const photosWithSignedUrls = await Promise.all(urlPromises);
       setPhotos(photosWithSignedUrls);
       
       // Set initial selected week
