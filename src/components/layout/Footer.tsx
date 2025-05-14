@@ -4,7 +4,7 @@ import { Facebook, Twitter, Instagram, Mail, Leaf } from "lucide-react";
 
 const Footer: React.FC = () => {
   return (
-    <footer className="bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-white">
+    <footer className="bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-white">
       <div className="container mx-auto px-4 py-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Brand */}
@@ -13,32 +13,32 @@ const Footer: React.FC = () => {
               <Leaf size={32} className="text-green-400" />
               <span className="text-xl font-bold">GreenLean</span>
             </Link>
-            <p className="text-gray-300 mb-4">
+            <p className="text-gray-700 dark:text-gray-700 dark:text-gray-300 mb-4">
               Your companion on the journey to a healthier, happier you. Free
               personalized diet and weight loss plans.
             </p>
             <div className="flex space-x-4">
               <a
                 href="#"
-                className="text-gray-300 hover:text-green-400 transition-colors"
+                className="text-gray-700 dark:text-gray-300 hover:text-green-400 transition-colors"
               >
                 <Facebook size={20} />
               </a>
               <a
                 href="#"
-                className="text-gray-300 hover:text-green-400 transition-colors"
+                className="text-gray-700 dark:text-gray-300 hover:text-green-400 transition-colors"
               >
                 <Twitter size={20} />
               </a>
               <a
                 href="#"
-                className="text-gray-300 hover:text-green-400 transition-colors"
+                className="text-gray-700 dark:text-gray-300 hover:text-green-400 transition-colors"
               >
                 <Instagram size={20} />
               </a>
               <a
                 href="#"
-                className="text-gray-300 hover:text-green-400 transition-colors"
+                className="text-gray-700 dark:text-gray-300 hover:text-green-400 transition-colors"
               >
                 <Mail size={20} />
               </a>
@@ -52,7 +52,7 @@ const Footer: React.FC = () => {
               <li>
                 <Link
                   to="/"
-                  className="text-gray-300 hover:text-green-400 transition-colors"
+                  className="text-gray-700 dark:text-gray-300 hover:text-green-400 transition-colors"
                 >
                   Home
                 </Link>
@@ -60,7 +60,7 @@ const Footer: React.FC = () => {
               <li>
                 <Link
                   to="/quiz"
-                  className="text-gray-300 hover:text-green-400 transition-colors"
+                  className="text-gray-700 dark:text-gray-300 hover:text-green-400 transition-colors"
                 >
                   Take Quiz
                 </Link>
@@ -68,7 +68,7 @@ const Footer: React.FC = () => {
               <li>
                 <Link
                   to="/diet-plans"
-                  className="text-gray-300 hover:text-green-400 transition-colors"
+                  className="text-gray-700 dark:text-gray-300 hover:text-green-400 transition-colors"
                 >
                   Diet Plans
                 </Link>
@@ -76,7 +76,7 @@ const Footer: React.FC = () => {
               <li>
                 <Link
                   to="/weight-loss"
-                  className="text-gray-300 hover:text-green-400 transition-colors"
+                  className="text-gray-700 dark:text-gray-300 hover:text-green-400 transition-colors"
                 >
                   Weight Loss
                 </Link>
@@ -91,7 +91,7 @@ const Footer: React.FC = () => {
               <li>
                 <Link
                   to="/about"
-                  className="text-gray-300 hover:text-green-400 transition-colors"
+                  className="text-gray-700 dark:text-gray-300 hover:text-green-400 transition-colors"
                 >
                   About Us
                 </Link>
@@ -99,7 +99,7 @@ const Footer: React.FC = () => {
               <li>
                 <Link
                   to="/contact"
-                  className="text-gray-300 hover:text-green-400 transition-colors"
+                  className="text-gray-700 dark:text-gray-300 hover:text-green-400 transition-colors"
                 >
                   Contact Us
                 </Link>
@@ -107,7 +107,7 @@ const Footer: React.FC = () => {
               <li>
                 <a
                   href="/faq"
-                  className="text-gray-300 hover:text-green-400 transition-colors"
+                  className="text-gray-700 dark:text-gray-300 hover:text-green-400 transition-colors"
                 >
                   FAQ
                 </a>
@@ -118,7 +118,7 @@ const Footer: React.FC = () => {
           {/* Newsletter */}
           <div className="col-span-1">
             <h3 className="text-lg font-semibold mb-4">Stay Updated</h3>
-            <p className="text-gray-300 mb-4">
+            <p className="text-gray-700 dark:text-gray-300 mb-4">
               Subscribe to our newsletter for tips and updates.
             </p>
             <form className="flex flex-col space-y-2">
