@@ -98,7 +98,7 @@ const CommunityPhotos: React.FC = () => {
         if (error) throw error;
         return data.signedUrl;
       } catch (error) {
-        console.error('Error generating signed URL:', error);
+        console.error("Signed URL error:", error.message, "Path:", filePath);
         return null;
       }
     };
