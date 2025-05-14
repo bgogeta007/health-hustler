@@ -1,8 +1,9 @@
-import React from "react";
+import React, { Suspense } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
 import { AuthProvider } from "./contexts/AuthContext";
 import ProtectedRoute from "./components/auth/ProtectedRoute";
+import LoadingScreen from './components/common/LoadingScreen'
 
 // Layout
 import Layout from "./components/layout/Layout";
@@ -34,6 +35,7 @@ function App() {
     <AuthProvider>
       <PlatformProvider>
         <Router>
+          <Suspense fallback={<LoadingScreen />}>
           <AnimatePresence mode="wait">
             <Routes>
               {/* Auth callback route outside of layout */}
@@ -117,6 +119,7 @@ function App() {
               </Route>
             </Routes>
           </AnimatePresence>
+          </Suspense>
         </Router>
       </PlatformProvider>
     </AuthProvider>
