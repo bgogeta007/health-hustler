@@ -5,7 +5,7 @@ import { Users, Award, Heart, Clock, ArrowRight } from "lucide-react";
 
 const About: React.FC = () => {
   return (
-    <div className="min-h-screen pt-24 pb-16 bg-gray-50">
+    <div className="min-h-screen pt-24 pb-16 bg-gray-50 dark:bg-gray-900">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Hero Section */}
         <div className="text-center mb-16">
