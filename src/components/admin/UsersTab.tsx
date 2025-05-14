@@ -26,12 +26,11 @@ const UsersTab: React.FC = () => {
     try {
       // Check admin status for current user
       const {
-        data: { user },
-        error
+        data: { user }
       } = await supabase.auth.getUser();
 
-      if (error || !user) {
-        console.error("User not logged in", error);
+      if (!user) {
+        console.error("User not logged in");
         return;
       }
       
