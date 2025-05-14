@@ -249,8 +249,8 @@ const ChallengesTab: React.FC = () => {
               <tr key={challenge.id}>
                 <td className="px-6 py-4">
                   <div>
-                    <p className="font-medium dark:text-white">{challenge.title}</p>
-                    <p className="text-sm text-gray-500 dark:text-gray-300">{challenge.description}</p>
+                    <p className="font-medium dark:text-white truncate">{challenge.title}</p>
+                    <p className="text-sm text-gray-500 dark:text-gray-300 line-clamp-2">{challenge.description}</p>
                   </div>
                 </td>
                 <td className="px-6 py-4">
