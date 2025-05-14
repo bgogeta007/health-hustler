@@ -37,20 +37,20 @@ const About: React.FC = () => {
             transition={{ duration: 0.5 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-3xl font-bold text-gray-800 mb-6">Our Story</h2>
-            <p className="text-gray-600 mb-4">
+            <h2 className="text-3xl font-bold text-gray-800 dark:text-white mb-6">Our Story</h2>
+            <p className="text-gray-600 dark:text-gray-300 mb-4">
               GreenLean was born from a simple observation: health and wellness
               advice is often generic, overwhelming, and inaccessible to many
               people.
             </p>
-            <p className="text-gray-600 mb-4">
+            <p className="text-gray-600 dark:text-gray-300 mb-4">
               We believe that everyone deserves personalized guidance for their
               unique health journey. Our team of nutrition experts, fitness
               professionals, and health enthusiasts came together to create a
               platform that delivers customized plans without the premium price
               tag.
             </p>
-            <p className="text-gray-600">
+            <p className="text-gray-600 dark:text-gray-300">
               Today, GreenLean helps thousands of people discover diet and
               fitness approaches tailored to their specific needs, goals, and
               preferences—all completely free.
@@ -74,10 +74,10 @@ const About: React.FC = () => {
         {/* Our Values */}
         <div className="mb-16">
           <div className="text-center mb-10">
-            <h2 className="text-3xl font-bold text-gray-800 mb-4">
+            <h2 className="text-3xl font-bold text-gray-800 dark:text-white mb-4">
               Our Values
             </h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+            <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
               These core principles guide everything we do at GreenLean.
             </p>
           </div>
@@ -120,10 +120,10 @@ const About: React.FC = () => {
                 <div className="rounded-full bg-gray-50 w-16 h-16 flex items-center justify-center mb-4">
                   {value.icon}
                 </div>
-                <h3 className="text-xl font-semibold text-gray-800 mb-2">
+                <h3 className="text-xl font-semibold text-gray-800 dark:text-white mb-2">
                   {value.title}
                 </h3>
-                <p className="text-gray-600">{value.description}</p>
+                <p className="text-gray-600 dark:text-gray-300">{value.description}</p>
               </motion.div>
             ))}
           </div>
@@ -132,10 +132,10 @@ const About: React.FC = () => {
         {/* Team Section */}
         <div className="mb-16">
           <div className="text-center mb-10">
-            <h2 className="text-3xl font-bold text-gray-800 mb-4">
+            <h2 className="text-3xl font-bold text-gray-800 dark:text-white mb-4">
               Our Expert Team
             </h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+            <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
               Meet the professionals behind GreenLean's personalized plans.
             </p>
           </div>
@@ -178,13 +178,13 @@ const About: React.FC = () => {
                   />
                 </div>
                 <div className="p-6">
-                  <h3 className="text-xl font-bold text-gray-800 mb-1">
+                  <h3 className="text-xl font-bold text-gray-800 dark:text-white mb-1">
                     {member.name}
                   </h3>
                   <p className="text-green-500 font-medium mb-3">
                     {member.role}
                   </p>
-                  <p className="text-gray-600">{member.bio}</p>
+                  <p className="text-gray-600 dark:text-gray-300">{member.bio}</p>
                 </div>
               </motion.div>
             ))}
