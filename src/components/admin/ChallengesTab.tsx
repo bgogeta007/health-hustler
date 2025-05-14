@@ -170,13 +170,13 @@ const ChallengesTab: React.FC = () => {
   });
 
   return (
-    <div className="space-y-6">
+    <div className="px-4 sm:px-6 lg:px-8 space-y-6">
       {/* Header */}
       <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
         <h2 className="text-2xl font-bold dark:text-white">Challenge Management</h2>
         <button
           onClick={() => setShowForm(true)}
-          className="px-4 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600 flex items-center"
+          className="w-full sm:w-auto px-4 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600 flex items-center"
         >
           <Plus className="h-5 w-5 mr-2" />
           Create Challenge
@@ -272,7 +272,7 @@ const ChallengesTab: React.FC = () => {
                 </td>
                 <td className="px-6 py-4">
                   <div className="flex items-center">
-                    <div className="w-16 bg-gray-200 rounded-full h-2 mr-2">
+                    <div className="flex-1 bg-gray-200 rounded-full h-2 mr-2">
                       <div
                         className="bg-green-500 h-2 rounded-full"
                         style={{ width: `${challenge.completion_rate}%` }}
