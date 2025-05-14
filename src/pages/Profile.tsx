@@ -131,6 +131,42 @@ const Profile: React.FC = () => {
     }
   };
 
+  const handleDeleteAvatar = async () => {
+      if (!user || !avatarUrl) return;
+    
+      setUploadingAvatar(true);
+      setMessage(null);
+    
+      try {
+        // Extract path from public URL
+        const path = avatarUrl.split('/').slice(-2).join('/'); // e.g., avatars/filename.jpg
+    
+        // Delete file from Supabase storage
+        const { error: deleteError } = await supabase.storage
+          .from('avatars')
+          .remove([path]);
+    
+        if (deleteError) throw deleteError;
+    
+        // Update profile to remove avatar URL
+        const { error: updateError } = await supabase
+          .from('profiles')
+          .update({ avatar_url: null })
+          .eq('id', user.id);
+    
+        if (updateError) throw updateError;
+    
+        setAvatarUrl(null);
+        setMessage({ type: 'success', text: 'Profile picture removed successfully!' });
+      } catch (error) {
+        console.error('Error deleting avatar:', error);
+        setMessage({ type: 'error', text: 'Failed to delete profile picture. Please try again.' });
+      } finally {
+        setUploadingAvatar(false);
+      }
+    };
+
+
   if (loading) {
     return (
       <div className="min-h-screen pt-24 pb-16 flex items-center justify-center">
@@ -170,56 +206,55 @@ const Profile: React.FC = () => {
                     Profile Picture
                   </label>
                   <div className="flex items-center space-x-6">
-  <div className="relative">
-    <button
-      type="button"
-      onClick={handleAvatarClick}
-      className="w-24 h-24 rounded-full bg-gray-200 dark:bg-gray-700 flex items-center justify-center overflow-hidden relative group cursor-pointer"
-    >
-      {avatarUrl ? (
-        <img 
-          src={avatarUrl} 
-          alt="Profile" 
-          className="w-full h-full object-cover"
-        />
-      ) : (
-        <User className="w-12 h-12 text-gray-400" />
-      )}
-      <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-        {uploadingAvatar ? (
-          <Loader className="h-6 w-6 animate-spin text-white" />
-        ) : (
-          <Camera className="h-6 w-6 text-white" />
-        )}
-      </div>
-    </button>
-    <input
-      ref={fileInputRef}
-      type="file"
-      accept="image/*"
-      onChange={handleAvatarChange}
-      className="hidden"
-    />
-  </div>
-
-  <div className="flex-1 space-y-2">
-    <p className="text-sm text-gray-500 dark:text-gray-400">
-      Click to upload a new profile picture.<br />
-      Recommended: Square image, at least 400x400 pixels.<br />
-      Maximum size: 5MB
-    </p>
-    {avatarUrl && (
-      <button
-        type="button"
-        onClick={handleDeleteAvatar}
-        className="text-sm text-red-500 hover:underline"
-      >
-        Delete profile picture
-      </button>
-    )}
-  </div>
-</div>
-
+                    <div className="relative">
+                      <button
+                        type="button"
+                        onClick={handleAvatarClick}
+                        className="w-24 h-24 rounded-full bg-gray-200 dark:bg-gray-700 flex items-center justify-center overflow-hidden relative group cursor-pointer"
+                      >
+                        {avatarUrl ? (
+                          <img 
+                            src={avatarUrl} 
+                            alt="Profile" 
+                            className="w-full h-full object-cover"
+                          />
+                        ) : (
+                          <User className="w-12 h-12 text-gray-400" />
+                        )}
+                        <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                          {uploadingAvatar ? (
+                            <Loader className="h-6 w-6 animate-spin text-white" />
+                          ) : (
+                            <Camera className="h-6 w-6 text-white" />
+                          )}
+                        </div>
+                      </button>
+                      <input
+                        ref={fileInputRef}
+                        type="file"
+                        accept="image/*"
+                        onChange={handleAvatarChange}
+                        className="hidden"
+                      />
+                    </div>
+                  
+                    <div className="flex-1 space-y-2">
+                      <p className="text-sm text-gray-500 dark:text-gray-400">
+                        Click to upload a new profile picture.<br />
+                        Recommended: Square image, at least 400x400 pixels.<br />
+                        Maximum size: 5MB
+                      </p>
+                      {avatarUrl && (
+                        <button
+                          type="button"
+                          onClick={handleDeleteAvatar}
+                          className="text-sm text-red-500 hover:underline"
+                        >
+                          Delete profile picture
+                        </button>
+                      )}
+                    </div>
+                  </div>
                 </div>
 
                 <div>
