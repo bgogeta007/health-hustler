@@ -30,7 +30,6 @@ const ProgressPhotos: React.FC = () => {
 
   useEffect(() => {
     fetchPhotos();
-    refreshSignedUrls();
 
     // Set up interval to refresh URLs every 45 minutes (before the 1-hour expiry)
     urlRefreshInterval.current = setInterval(refreshSignedUrls, 45 * 60 * 1000);
