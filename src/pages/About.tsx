@@ -10,7 +10,7 @@ const About: React.FC = () => {
         {/* Hero Section */}
         <div className="text-center mb-16">
           <motion.h1
-            className="text-4xl font-bold text-gray-800 mb-4"
+            className="text-4xl font-bold text-gray-800 dark:text-white mb-4"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
@@ -18,7 +18,7 @@ const About: React.FC = () => {
             About GreenLean
           </motion.h1>
           <motion.p
-            className="text-lg text-gray-600 max-w-2xl mx-auto"
+            className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
