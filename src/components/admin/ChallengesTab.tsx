@@ -172,7 +172,7 @@ const ChallengesTab: React.FC = () => {
   return (
     <div className="space-y-6">
       {/* Header */}
-      <div className="flex justify-between items-center">
+      <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
         <h2 className="text-2xl font-bold dark:text-white">Challenge Management</h2>
         <button
           onClick={() => setShowForm(true)}
