@@ -687,8 +687,6 @@ const CommunityPhotos: React.FC = () => {
                       </div>
                     </div>
 
-                    {photo.caption && (
-                      <>
                         <p className="text-sm text-gray-800 dark:text-white mb-2">
                           <span className="font-medium mr-2">
                             {photo.user.username}
@@ -700,8 +698,6 @@ const CommunityPhotos: React.FC = () => {
                             addSuffix: true,
                           })}
                         </p>
-                      </>
-                    )}
                   </div>
 
                   {/* Comments */}
