@@ -27,7 +27,7 @@ const OverviewTab: React.FC = () => {
       const { data: participantData, error: participantError } = await supabase
         .from('challenge_participants')
         .select('user_id')
-        .neq('user_id', null);
+        .not('user_id', 'is', null);
       
       const uniqueUserIds = Array.from(new Set(participantData?.map(p => p.user_id)));
       const totalParticipants = uniqueUserIds.length;
