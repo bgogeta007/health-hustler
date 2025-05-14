@@ -35,7 +35,7 @@ const RewardsTab: React.FC = () => {
       const { data, error } = await supabase.from("user_rewards").select(`
           *,
           user:profiles(username, full_name, email)
-        `);
+        `).order("updated_at", { ascending: false });
 
       if (error) throw error;
       setRewards(data);
