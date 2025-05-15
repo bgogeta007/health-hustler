@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { Facebook, Twitter, Instagram, Mail, Leaf } from "lucide-react";
+import { Facebook, Tiktok, Instagram, Mail, Leaf } from "lucide-react";
 
 const Footer: React.FC = () => {
   return (
@@ -19,16 +19,16 @@ const Footer: React.FC = () => {
             </p>
             <div className="flex space-x-4">
               <a
-                href="#"
+                href="https://www.tiktok.com/@greenlean.fit?_t=ZM-8wLuVwPn3h7&_r=1"
                 className="text-gray-700 dark:text-gray-300 hover:text-green-400 transition-colors"
               >
-                <Facebook size={20} />
+                <Tiktok size={20} />
               </a>
               <a
                 href="#"
                 className="text-gray-700 dark:text-gray-300 hover:text-green-400 transition-colors"
               >
-                <Twitter size={20} />
+                <Facebook size={20} />
               </a>
               <a
                 href="#"
