@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { Facebook, Tiktok, Instagram, Mail, Leaf } from "lucide-react";
+import { Facebook, Instagram, Mail, Leaf } from "lucide-react";
+import { SiTiktok } from 'react-icons/si';
 
 const Footer: React.FC = () => {
   return (
@@ -22,7 +23,7 @@ const Footer: React.FC = () => {
                 href="https://www.tiktok.com/@greenlean.fit?_t=ZM-8wLuVwPn3h7&_r=1"
                 className="text-gray-700 dark:text-gray-300 hover:text-green-400 transition-colors"
               >
-                <Tiktok size={20} />
+                <SiTiktok size={20} />
               </a>
               <a
                 href="#"
