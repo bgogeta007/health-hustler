@@ -21,6 +21,7 @@ const Footer: React.FC = () => {
             <div className="flex space-x-4">
               <a
                 href="https://www.tiktok.com/@greenlean.fit?_t=ZM-8wLuVwPn3h7&_r=1"
+                target="_blank"
                 className="text-gray-700 dark:text-gray-300 hover:text-green-400 transition-colors"
               >
                 <SiTiktok size={20} />
